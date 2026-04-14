@@ -16,15 +16,15 @@ The following steps describe the end-to-end process for submitting an evaluation
 
 ### 1. Fork the Repository
 
-Create a personal fork of [`scarfbench/submit`](https://github.com/scarfbench/submit). The fork will inherit the default branch `main`, which contains the workflow definitions and documentation only.
+Create a personal fork of [`scarfbench/scarfbench-submit`](https://github.com/scarfbench/scarfbench-submit). Do not rename the fork; keep it as `<your-username>/scarfbench-submit`. The fork will inherit the default branch `main`, which contains the workflow definitions and documentation only.
 
 ### 2. Add Conversion Artifacts
 
 Clone the fork locally and add the conversion directories to the working tree. Contributors are encouraged to commit directly to the fork's `main` branch, though any branch may be used. The commit need not preserve any particular top-level layout, provided that each conversion root contains the expected `run_*/metadata.json` and `run_*/validation/run.log` files.
 
 ```bash
-git clone https://github.com/<your-username>/submit.git
-cd submit
+git clone https://github.com/<your-username>/scarfbench-submit.git
+cd scarfbench-submit
 # Copy conversion artifacts into the working tree, then:
 git add .
 git commit -m "Add submission: <brief descriptor>"
@@ -38,7 +38,7 @@ The critical requirement is that the pull request **target** the upstream `submi
 A pre-filled comparison URL of the following form may be used to reach the pull-request creation interface with the correct base branch already selected:
 
 ```
-https://github.com/scarfbench/submit/compare/submission...<your-username>:submit:main?expand=1
+https://github.com/scarfbench/scarfbench-submit/compare/submission...<your-username>:scarfbench-submit:main?expand=1
 ```
 
 The pull request description should identify the agent, model, and any relevant variant or configuration details that are not already encoded in the submission's metadata.
