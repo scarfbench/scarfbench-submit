@@ -188,6 +188,7 @@ jobs:
           set -euo pipefail
           for vendor in submissions/*/; do
             [ -d "$vendor" ] || continue
+            [ "$(basename "$vendor")" = "pr-meta" ] && continue
             echo "::group::Leaderboard for $vendor"
             scarf validate \
               --conversions-dir "$vendor" \
