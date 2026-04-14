@@ -1,5 +1,8 @@
 # Scarfbench Submissions
 
+> [!IMPORTANT]
+> **Do not modify, add, or remove anything in the `.github/` folder.** This directory contains the validation workflow definitions required by the submission pipeline. Any changes to its contents will cause the submission to fail.
+
 This repository is the submission intake for [Scarfbench](https://scarfbench.info), a benchmark for evaluating automated code-conversion systems across Java application frameworks. Contributors submit evaluation artifacts by opening a pull request; a continuous integration workflow validates the submission and records its result on the leaderboard.
 
 ## Prerequisites
@@ -30,6 +33,7 @@ git add .
 git commit -m "Add submission: <brief descriptor>"
 git push origin main
 ```
+
 
 ### 3. Open a Pull Request against the `submission` Branch
 
