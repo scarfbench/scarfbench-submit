@@ -31,6 +31,7 @@ git commit -m "Add submission: <brief descriptor>"
 git push origin main
 ```
 
+
 ### 3. Open a Pull Request against the `submission` Branch
 
 The critical requirement is that the pull request **target** the upstream `submission` branch, not `main`. GitHub's pull-request creation interface defaults the base branch to the upstream default (`main`); contributors must manually change the base branch selector to `submission` before submitting. Failure to do so will result in the validation workflow not being triggered.
