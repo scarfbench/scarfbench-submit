@@ -1,9 +1,8 @@
 name: Scarf Validate
 
 # Stage 2 of 3. Triggered by completion of Scarf Package. Runs from the
-# default branch with access to HARNESS_TOKEN. The token is used ONLY to
-# clone the private harness, then scrubbed from the environment before any
-# PR-supplied code (make test / Docker build) runs.
+# default branch with access to HARNESS_TOKEN. Fans out validation across
+# shards for parallelism, then consolidates into a leaderboard.
 on:
   workflow_run:
     workflows: ["Scarf Package"]
@@ -14,9 +13,52 @@ permissions:
   actions: read
 
 jobs:
-  validate:
+  discover:
     if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Download submission payload
+        uses: actions/download-artifact@v4
+        with:
+          name: submission-payload
+          path: submissions
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: set-matrix
+        shell: bash
+        env:
+          CHUNK_SIZE: 8
+        run: |
+          set -euo pipefail
+          mapfile -t dirs < <(
+            find submissions -type f -path '*/run_*/metadata.json' -printf '%h\n' \
+              | xargs -n1 dirname \
+              | sort -u
+          )
+          if [ "${#dirs[@]}" -eq 0 ]; then
+            echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          json=$(printf '%s\n' "${dirs[@]}" \
+            | jq -R . \
+            | jq -sc --argjson n "${CHUNK_SIZE}" '
+                {include: [ _nwise($n) | {dirs: (. | join("\n"))} ]}
+              ')
+          echo "matrix=$json" >> "$GITHUB_OUTPUT"
+          echo "Sharded ${#dirs[@]} roots into $(jq '.include | length' <<<"$json") chunk(s)"
+
+  validate:
+    name: Validate chunk ${{ strategy.job-index }}
+    needs: discover
+    if: needs.discover.outputs.matrix != '{"include":[]}'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
     steps:
       - name: Download submission payload
         uses: actions/download-artifact@v4
@@ -36,12 +78,9 @@ jobs:
           persist-credentials: false
 
       - name: Scrub harness credentials
-        # Belt-and-suspenders: persist-credentials:false should already prevent
-        # the token from landing in .git/config, but ensure nothing lingers.
         run: |
           set -euo pipefail
           rm -rf harness/.git
-          # Confirm no token leaked into the tree.
           if grep -rq 'ghp_\|github_pat_' harness; then
             echo "ERROR: token-like string found in harness checkout" >&2
             exit 1
@@ -54,25 +93,9 @@ jobs:
           echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
           scarf --version
 
-      - name: Discover conversion roots
-        id: discover
-        run: |
-          set -euo pipefail
-          mapfile -t dirs < <(
-            find submissions -type f -path '*/run_*/metadata.json' -printf '%h\n' \
-              | xargs -n1 dirname \
-              | sort -u
-          )
-          {
-            echo 'dirs<<EOF'
-            printf '%s\n' "${dirs[@]}"
-            echo 'EOF'
-          } >> "$GITHUB_OUTPUT"
-          echo "Found ${#dirs[@]} conversion root(s)"
-
-      - name: Validate (runs make test in Docker via scarf)
+      - name: Validate
         env:
-          DIRS: ${{ steps.discover.outputs.dirs }}
+          DIRS: ${{ matrix.dirs }}
         run: |
           set -euo pipefail
           while IFS= read -r dir; do
@@ -85,21 +108,97 @@ jobs:
             echo "::endgroup::"
           done <<< "$DIRS"
 
-      - name: Generate leaderboard(s)
+      - name: Package shard output
+        if: always()
         env:
-          DIRS: ${{ steps.discover.outputs.dirs }}
+          DIRS: ${{ matrix.dirs }}
         run: |
           set -euo pipefail
+          mkdir -p shard
           while IFS= read -r dir; do
             [ -z "$dir" ] && continue
-            echo "::group::Leaderboard for $dir"
+            mkdir -p "shard/$dir"
+            rsync -a --prune-empty-dirs \
+                  --include='*/' \
+                  --include='metadata.json' \
+                  --include='run.log' \
+                  --exclude='*' \
+                  "$dir/" \
+                  "shard/$dir/"
+          done <<< "$DIRS"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ strategy.job-index }}
+          path: shard/
+          if-no-files-found: warn
+
+  leaderboard:
+    name: Generate leaderboard
+    needs: [discover, validate]
+    if: always() && needs.validate.result != 'cancelled' && needs.discover.outputs.matrix != '{"include":[]}'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download submission payload
+        uses: actions/download-artifact@v4
+        with:
+          name: submission-payload
+          path: .
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout eval harness
+        uses: actions/checkout@v4
+        with:
+          repository: scarfbench/scarfbench-eval-harness
+          token: ${{ secrets.HARNESS_TOKEN }}
+          path: harness
+          ref: main
+          persist-credentials: false
+
+      - name: Scrub harness credentials
+        run: |
+          rm -rf harness/.git
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: shard-*
+          merge-multiple: true
+          path: shard-out
+
+      - name: Overlay shard run.log files onto tree
+        run: |
+          if [ -d shard-out ]; then
+            rsync -a shard-out/ submissions/
+          fi
+
+      - name: Install scarfbench-cli
+        run: |
+          curl --proto '=https' --tlsv1.2 -LsSf \
+            https://github.com/scarfbench/scarf/releases/latest/download/scarfbench-cli-installer.sh | sh
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+          scarf --version
+
+      - name: Generate leaderboard(s)
+        run: |
+          set -euo pipefail
+          roots=$(find submissions -type f -path '*/run_*/metadata.json' -printf '%h\n' \
+                    | xargs -n1 dirname \
+                    | sort -u)
+          if [ -z "$roots" ]; then
+            echo "No conversion roots found; nothing to leaderboard."
+            exit 0
+          fi
+          while read -r root; do
+            echo "::group::Leaderboard for $root"
             scarf validate \
-              --conversions-dir "$dir" \
+              --conversions-dir "$root" \
               --validations-dir harness \
               --dont-rerun \
               --leaderboard-out
             echo "::endgroup::"
-          done <<< "$DIRS"
+          done <<< "$roots"
 
       - uses: actions/upload-artifact@v4
         with:
