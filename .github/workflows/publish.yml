@@ -43,7 +43,7 @@ jobs:
 
             const marker = '<!-- scarfbench-leaderboard -->';
             const body = conclusion === 'success'
-              ? `${marker}\ndone!`
+              ? `${marker}\nDone! View results on the [leaderboard](https://scarfbench.info/leaderboard).`
               : `${marker}\nvalidation failed (\`${conclusion}\`) — see the workflow run for details.`;
 
             const existing = await github.paginate(github.rest.issues.listComments, {
