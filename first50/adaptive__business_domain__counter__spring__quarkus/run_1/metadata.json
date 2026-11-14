@@ -1,0 +1,13 @@
+{
+  "agent": "adaptive",
+  "layer": "business_domain",
+  "app": "counter",
+  "status": "CONVERTED",
+  "repeat": 1,
+  "source_framework": "spring",
+  "target_framework": "quarkus",
+  "compile_ok": "UNK",
+  "deploy_ok": "UNK",
+  "test_pass_percent": "UNK",
+  "model": "gpt-5.6-sol"
+}

@@ -1,0 +1,48 @@
+[adaptive-evolution 2026-11-10T16:15:43.251225+00:00] round 1/3, library v1, selected learned operators: []
+[adaptive-evolution 2026-11-10T16:23:20.312707+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-10T16:23:20.313240+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 05:23:20] trace attempt-0001__adaptive__business_domain__cart__quarkus__jakarta: distilling all independent repair knowledge
+[evolution 05:23:53] genericity warning in RepairKnowledge: ['cart']
+[evolution 05:23:53] genericity warning in RepairKnowledge: ['cart']
+[evolution 05:23:53] distilled 5 independent knowledge item(s)
+[evolution 05:23:53] knowledge 1/5: knowledge_964c7f618cc0 (Replace framework-managed dependencies and plugins with provided standard platform APIs, remove obsolete framework-specific build profiles and runtime properties, align the compiler release with the target runtime, and package the web module as a WAR using target-runtime build integration.)
+[evolution 05:23:53] retrieving top 5 related operators with BM25
+[evolution 05:23:53]   candidate[0]: migrate_framework, score=3.6408, parent=None
+[evolution 05:23:53]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=3.0801, parent=migrate_framework
+[evolution 05:23:53]   candidate[2]: repair_framework, score=1.6958, parent=None
+[evolution 05:23:53] comparing retrieved hierarchy and deciding mutation
+[evolution 05:24:05] decision 1/5: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 05:24:05] knowledge 2/5: knowledge_23fd38b8a6ee (Add an explicit standard REST Application subclass and redistribute path segments among the application mapping, resource mapping, and deployment context so existing external REST routes remain unchanged.)
+[evolution 05:24:05] retrieving top 5 related operators with BM25
+[evolution 05:24:05]   candidate[0]: migrate_framework, score=2.9677, parent=None
+[evolution 05:24:05]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=2.6871, parent=migrate_framework
+[evolution 05:24:05]   candidate[2]: repair_framework, score=2.3670, parent=None
+[evolution 05:24:05] comparing retrieved hierarchy and deciding mutation
+[evolution 05:24:24] decision 2/5: ADD, target=preserve_external_rest_routes_during_framework_migration, apply=False
+[evolution 05:24:24] knowledge 3/5: knowledge_a13dd4299373 (Remove the source-framework HTTP root-path setting and define the equivalent context root, web-profile features, and HTTP endpoints in the target application-server configuration.)
+[evolution 05:24:24] retrieving top 5 related operators with BM25
+[evolution 05:24:24]   candidate[0]: migrate_framework, score=4.2700, parent=None
+[evolution 05:24:24]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=3.1476, parent=migrate_framework
+[evolution 05:24:24]   candidate[2]: repair_framework, score=3.0106, parent=None
+[evolution 05:24:24] comparing retrieved hierarchy and deciding mutation
+[evolution 05:24:52] decision 3/5: ADD, target=preserve_external_http_route_during_framework_migration, apply=False
+[evolution 05:24:52] knowledge 4/5: knowledge_9d6e48a920ca (Add a standards-compliant bean archive descriptor with annotated discovery so dependency-injection beans packaged across the application are discovered by the target runtime.)
+[evolution 05:24:52] retrieving top 5 related operators with BM25
+[evolution 05:24:52]   candidate[0]: migrate_framework, score=3.8117, parent=None
+[evolution 05:24:52]   candidate[1]: repair_framework, score=2.5324, parent=None
+[evolution 05:24:52]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=2.1583, parent=migrate_framework
+[evolution 05:24:52] comparing retrieved hierarchy and deciding mutation
+[evolution 05:25:23] decision 4/5: ADD, target=configure_annotated_bean_archive_discovery, apply=False
+[evolution 05:25:23] knowledge 5/5: knowledge_41127ed8ad23 (Add a minimal static landing resource at the web context root while leaving API routes unchanged.)
+[evolution 05:25:23] retrieving top 5 related operators with BM25
+[evolution 05:25:23]   candidate[0]: replace_legacy_server_bootstrap_with_executable_runtime, score=2.1029, parent=migrate_framework
+[evolution 05:25:23]   candidate[1]: migrate_framework, score=1.4353, parent=None
+[evolution 05:25:23]   candidate[2]: repair_framework, score=0.8071, parent=None
+[evolution 05:25:23] comparing retrieved hierarchy and deciding mutation
+[evolution 05:25:53] decision 5/5: ADD, target=preserve_context_root_with_static_landing, apply=False
+[evolution 05:25:53] operator library version: 1 -> 1
+[evolution 05:25:53] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__cart__quarkus__jakarta/attempt-0001/adaptive__business_domain__cart__quarkus__jakarta/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 05:25:53] applying reviewed decision 1/5: DEFER
+[evolution 05:25:53] genericity warning in RepairKnowledge: ['cart']
+[evolution 05:25:53] applying reviewed decision 2/5: ADD
+[adaptive-evolution 2026-11-10T16:25:53.494696+00:00] evolution=FAILURE; library v1 -> v2, active=2, experiences=3

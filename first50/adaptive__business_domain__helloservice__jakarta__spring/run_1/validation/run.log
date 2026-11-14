@@ -1,0 +1,85 @@
+[adaptive-evolution 2026-11-11T04:16:59.475135+00:00] round 1/3, library v20, selected learned operators: ['migrate_legacy_managed_component_to_application_scope']
+[adaptive-evolution 2026-11-11T04:20:15.024577+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-11T04:20:15.027077+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 17:20:15] trace attempt-0001__adaptive__business_domain__helloservice__jakarta__spring: distilling all independent repair knowledge
+[evolution 17:20:51] distilled 8 independent knowledge item(s)
+[evolution 17:20:51] knowledge 1/8: knowledge_5b793bb40a67 (Replace legacy stateless component management with the target framework's singleton service management while retaining the existing SOAP annotations, operations, and response behavior.)
+[evolution 17:20:51] retrieving top 5 related operators with BM25
+[evolution 17:20:51]   candidate[0]: migrate_framework, score=30.8072, parent=None
+[evolution 17:20:51]   candidate[1]: migrate_legacy_managed_component_to_application_scope, score=17.4009, parent=migrate_framework
+[evolution 17:20:51]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=15.3457, parent=migrate_framework
+[evolution 17:20:51]   candidate[3]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=12.2738, parent=migrate_framework
+[evolution 17:20:51]   candidate[4]: migrate_application_scoped_component_to_discoverable_service, score=11.9490, parent=migrate_framework
+[evolution 17:20:51] comparing retrieved hierarchy and deciding mutation
+[evolution 17:20:59] decision 1/8: NO_CHANGE, target=migrate_legacy_managed_component_to_application_scope, apply=False
+[evolution 17:20:59] knowledge 2/8: knowledge_a274bb7a482f (Replace legacy application-server dependencies, deployable-archive packaging, and server build integration with target-framework web and SOAP dependencies, compatible compiler configuration, executable packaging, and target build integration.)
+[evolution 17:20:59] retrieving top 5 related operators with BM25
+[evolution 17:20:59]   candidate[0]: migrate_framework, score=20.4139, parent=None
+[evolution 17:20:59]   candidate[1]: replace_framework_build_integration_and_packaging, score=16.1763, parent=migrate_framework
+[evolution 17:20:59]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=15.0575, parent=replace_framework_build_integration_and_packaging
+[evolution 17:20:59]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=12.7003, parent=migrate_framework
+[evolution 17:20:59]   candidate[4]: replace_legacy_server_rendered_view_with_annotated_http_handler, score=8.7751, parent=migrate_framework
+[evolution 17:20:59] comparing retrieved hierarchy and deciding mutation
+[evolution 17:21:09] decision 2/8: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 17:21:09] knowledge 3/8: knowledge_4f4a60bf80b7 (Add the target framework's executable application entry point at an appropriate discovery root and retire the obsolete external-server bootstrap and deployment configuration.)
+[evolution 17:21:09] retrieving top 5 related operators with BM25
+[evolution 17:21:09]   candidate[0]: migrate_framework, score=22.5774, parent=None
+[evolution 17:21:09]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=11.9855, parent=migrate_framework
+[evolution 17:21:09]   candidate[2]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=9.5335, parent=migrate_framework
+[evolution 17:21:09]   candidate[3]: repair_framework, score=6.5961, parent=None
+[evolution 17:21:09]   candidate[4]: migrate_legacy_managed_component_to_application_scope, score=5.5985, parent=migrate_framework
+[evolution 17:21:09] comparing retrieved hierarchy and deciding mutation
+[evolution 17:21:17] decision 3/8: NO_CHANGE, target=replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 17:21:17] knowledge 4/8: knowledge_93b22218fc21 (Publish the existing SOAP implementation through a target-framework-managed SOAP runtime adapter while retaining its service contract and operation implementation.)
+[evolution 17:21:17] retrieving top 5 related operators with BM25
+[evolution 17:21:17]   candidate[0]: migrate_framework, score=24.9357, parent=None
+[evolution 17:21:17]   candidate[1]: migrate_servlet_http_adapter_to_annotated_endpoint, score=11.9490, parent=migrate_framework
+[evolution 17:21:17]   candidate[2]: migrate_legacy_managed_component_to_application_scope, score=11.0139, parent=migrate_framework
+[evolution 17:21:17]   candidate[3]: migrate_annotated_http_adapter_preserving_contract, score=9.7385, parent=migrate_framework
+[evolution 17:21:17]   candidate[4]: migrate_application_scoped_component_to_discoverable_service, score=9.2672, parent=migrate_framework
+[evolution 17:21:17] comparing retrieved hierarchy and deciding mutation
+[evolution 17:21:39] decision 4/8: ADD, target=migrate_annotated_soap_endpoint_to_managed_runtime, apply=False
+[evolution 17:21:39] knowledge 5/8: knowledge_e5547f0c9372 (Configure the target runtime to retain the application's externally visible context path during framework migration.)
+[evolution 17:21:39] retrieving top 5 related operators with BM25
+[evolution 17:21:39]   candidate[0]: migrate_framework, score=19.4747, parent=None
+[evolution 17:21:39]   candidate[1]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=10.6052, parent=migrate_framework
+[evolution 17:21:39]   candidate[2]: preserve_external_context_path_during_framework_migration, score=9.5048, parent=migrate_framework
+[evolution 17:21:39]   candidate[3]: migrate_application_scoped_component_to_discoverable_service, score=6.0986, parent=migrate_framework
+[evolution 17:21:39]   candidate[4]: migrate_legacy_managed_component_to_application_scope, score=6.0986, parent=migrate_framework
+[evolution 17:21:39] comparing retrieved hierarchy and deciding mutation
+[evolution 17:21:44] decision 5/8: NO_CHANGE, target=preserve_external_context_path_during_framework_migration, apply=False
+[evolution 17:21:44] knowledge 6/8: knowledge_d8ccdb3582ee (Configure the target SOAP runtime and endpoint publication so the migrated service remains available at its established external route.)
+[evolution 17:21:44] retrieving top 5 related operators with BM25
+[evolution 17:21:44]   candidate[0]: migrate_framework, score=21.4316, parent=None
+[evolution 17:21:44]   candidate[1]: migrate_servlet_http_adapter_to_annotated_endpoint, score=9.9219, parent=migrate_framework
+[evolution 17:21:44]   candidate[2]: migrate_application_scoped_component_to_discoverable_service, score=9.3362, parent=migrate_framework
+[evolution 17:21:44]   candidate[3]: preserve_external_context_path_during_framework_migration, score=6.6255, parent=migrate_framework
+[evolution 17:21:44]   candidate[4]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=6.4838, parent=migrate_framework
+[evolution 17:21:44] comparing retrieved hierarchy and deciding mutation
+[evolution 17:22:10] decision 6/8: ADD, target=publish_soap_endpoint_preserving_external_route, apply=False
+[evolution 17:22:10] knowledge 7/8: knowledge_ec55de2ae362 (Configure the target embedded runtime to retain the application's established HTTP port.)
+[evolution 17:22:10] retrieving top 5 related operators with BM25
+[evolution 17:22:10]   candidate[0]: migrate_framework, score=22.4265, parent=None
+[evolution 17:22:10]   candidate[1]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=12.0453, parent=migrate_framework
+[evolution 17:22:10]   candidate[2]: preserve_external_http_port_during_framework_migration, score=8.4911, parent=migrate_framework
+[evolution 17:22:10]   candidate[3]: migrate_legacy_managed_component_to_application_scope, score=7.8468, parent=migrate_framework
+[evolution 17:22:10]   candidate[4]: relocate_legacy_web_assets_to_runtime_static_resources, score=7.3174, parent=migrate_framework
+[evolution 17:22:10] comparing retrieved hierarchy and deciding mutation
+[evolution 17:22:17] decision 7/8: NO_CHANGE, target=preserve_external_http_port_during_framework_migration, apply=False
+[evolution 17:22:17] knowledge 8/8: knowledge_ff70314334d0 (Add a minimal static context-root resource in the target runtime's resource location so the established health-check route returns a successful HTTP response.)
+[evolution 17:22:17] retrieving top 5 related operators with BM25
+[evolution 17:22:17]   candidate[0]: migrate_framework, score=18.1776, parent=None
+[evolution 17:22:17]   candidate[1]: relocate_legacy_web_assets_to_runtime_static_resources, score=10.1432, parent=migrate_framework
+[evolution 17:22:17]   candidate[2]: ensure_context_root_http_success_during_framework_migration, score=8.9921, parent=migrate_framework
+[evolution 17:22:17]   candidate[3]: repair_framework, score=6.5482, parent=None
+[evolution 17:22:17]   candidate[4]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=6.4838, parent=migrate_framework
+[evolution 17:22:17] comparing retrieved hierarchy and deciding mutation
+[evolution 17:22:25] decision 8/8: NO_CHANGE, target=ensure_context_root_http_success_during_framework_migration, apply=False
+[evolution 17:22:25] operator library version: 20 -> 20
+[evolution 17:22:25] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__helloservice__jakarta__spring/attempt-0001/adaptive__business_domain__helloservice__jakarta__spring/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 17:22:25] applying reviewed decision 1/8: NO_CHANGE
+[evolution 17:22:25] applying reviewed decision 2/8: NO_CHANGE
+[evolution 17:22:25] applying reviewed decision 3/8: NO_CHANGE
+[evolution 17:22:25] applying reviewed decision 4/8: ADD
+[evolution 17:22:25] applying reviewed decision 5/8: NO_CHANGE
+[adaptive-evolution 2026-11-11T04:22:25.351563+00:00] evolution=FAILURE; library v20 -> v21, active=19, experiences=20

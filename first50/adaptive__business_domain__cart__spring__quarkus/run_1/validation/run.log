@@ -1,0 +1,85 @@
+[adaptive-evolution 2026-11-10T21:45:35.469932+00:00] round 1/3, library v4, selected learned operators: []
+[adaptive-evolution 2026-11-10T21:50:53.559975+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-10T21:50:53.560614+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 10:50:53] trace attempt-0001__adaptive__business_domain__cart__spring__quarkus: distilling all independent repair knowledge
+[evolution 10:51:23] genericity warning in RepairKnowledge: ['business']
+[evolution 10:51:23] genericity warning in RepairKnowledge: ['business']
+[evolution 10:51:23] distilled 7 independent knowledge item(s)
+[evolution 10:51:23] knowledge 1/7: knowledge_19efbe34b109 (Replace source-framework dependency management, module dependencies, packaging plugin, and compiler/test plugin configuration with target-framework-compatible build integration across parent and child modules.)
+[evolution 10:51:23] retrieving top 5 related operators with BM25
+[evolution 10:51:23]   candidate[0]: migrate_framework, score=12.9438, parent=None
+[evolution 10:51:23]   candidate[1]: replace_framework_build_integration_and_packaging, score=11.8649, parent=migrate_framework
+[evolution 10:51:23]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=5.2653, parent=migrate_framework
+[evolution 10:51:23]   candidate[3]: repair_framework, score=4.8868, parent=None
+[evolution 10:51:23]   candidate[4]: migrate_session_scoped_component, score=0.6261, parent=migrate_framework
+[evolution 10:51:23] comparing retrieved hierarchy and deciding mutation
+[evolution 10:51:30] decision 1/7: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 10:51:30] knowledge 2/7: knowledge_8cfc1b6a8510 (Convert a source-framework session-scoped service into a serializable target CDI session-scoped bean while retaining its business operations and per-client state semantics.)
+[evolution 10:51:30] retrieving top 5 related operators with BM25
+[evolution 10:51:30]   candidate[0]: migrate_framework, score=9.2406, parent=None
+[evolution 10:51:30]   candidate[1]: repair_framework, score=4.7322, parent=None
+[evolution 10:51:30]   candidate[2]: migrate_session_scoped_component, score=4.1061, parent=migrate_framework
+[evolution 10:51:30]   candidate[3]: replace_framework_build_integration_and_packaging, score=2.2177, parent=migrate_framework
+[evolution 10:51:30]   candidate[4]: replace_legacy_server_bootstrap_with_executable_runtime, score=2.1864, parent=migrate_framework
+[evolution 10:51:30] comparing retrieved hierarchy and deciding mutation
+[evolution 10:51:37] decision 2/7: NO_CHANGE, target=migrate_session_scoped_component, apply=False
+[evolution 10:51:37] knowledge 3/7: knowledge_01be941ab296 (Add target-compatible bean-discovery metadata to a dependent module so annotated dependency-injection beans are included in application discovery.)
+[evolution 10:51:37] retrieving top 5 related operators with BM25
+[evolution 10:51:37]   candidate[0]: migrate_framework, score=7.2773, parent=None
+[evolution 10:51:37]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=3.9349, parent=migrate_framework
+[evolution 10:51:37]   candidate[2]: repair_framework, score=2.5862, parent=None
+[evolution 10:51:37]   candidate[3]: replace_framework_build_integration_and_packaging, score=2.2177, parent=migrate_framework
+[evolution 10:51:37]   candidate[4]: preserve_external_rest_routes_during_framework_migration, score=2.1994, parent=migrate_framework
+[evolution 10:51:37] comparing retrieved hierarchy and deciding mutation
+[evolution 10:52:03] decision 3/7: ADD, target=enable_dependent_module_bean_discovery, apply=False
+[evolution 10:52:03] knowledge 4/7: knowledge_e879be20bbad (Replace the source-framework application bootstrap class and launch call with the target framework's executable entry point and runtime launcher.)
+[evolution 10:52:03] retrieving top 5 related operators with BM25
+[evolution 10:52:03]   candidate[0]: migrate_framework, score=11.5062, parent=None
+[evolution 10:52:03]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=8.5004, parent=migrate_framework
+[evolution 10:52:03]   candidate[2]: repair_framework, score=4.6231, parent=None
+[evolution 10:52:03]   candidate[3]: replace_framework_build_integration_and_packaging, score=3.3006, parent=migrate_framework
+[evolution 10:52:03]   candidate[4]: migrate_session_scoped_component, score=0.3459, parent=migrate_framework
+[evolution 10:52:03] comparing retrieved hierarchy and deciding mutation
+[evolution 10:52:10] decision 4/7: NO_CHANGE, target=replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 10:52:10] knowledge 5/7: knowledge_01b907d4331b (Port controller endpoints to the target REST API, translating route annotations, parameter binding, injection, request context access, and response construction while preserving the externally observed HTTP contract.)
+[evolution 10:52:10] retrieving top 5 related operators with BM25
+[evolution 10:52:10]   candidate[0]: migrate_framework, score=10.3842, parent=None
+[evolution 10:52:10]   candidate[1]: repair_framework, score=4.6231, parent=None
+[evolution 10:52:10]   candidate[2]: preserve_external_rest_routes_during_framework_migration, score=4.2965, parent=migrate_framework
+[evolution 10:52:10]   candidate[3]: migrate_session_scoped_component, score=2.6627, parent=migrate_framework
+[evolution 10:52:10]   candidate[4]: replace_framework_build_integration_and_packaging, score=2.5761, parent=migrate_framework
+[evolution 10:52:10] comparing retrieved hierarchy and deciding mutation
+[evolution 10:52:18] decision 5/7: NO_CHANGE, target=preserve_external_rest_routes_during_framework_migration, apply=False
+[evolution 10:52:18] knowledge 6/7: knowledge_ddf52785f6da (Translate the source server context-path setting into the target framework's root-path configuration so existing externally visible route prefixes remain unchanged.)
+[evolution 10:52:18] retrieving top 5 related operators with BM25
+[evolution 10:52:18]   candidate[0]: migrate_framework, score=8.7296, parent=None
+[evolution 10:52:18]   candidate[1]: repair_framework, score=5.6972, parent=None
+[evolution 10:52:18]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=4.2835, parent=migrate_framework
+[evolution 10:52:18]   candidate[3]: preserve_external_rest_routes_during_framework_migration, score=2.5481, parent=migrate_framework
+[evolution 10:52:18]   candidate[4]: migrate_session_scoped_component, score=0.8398, parent=migrate_framework
+[evolution 10:52:18] comparing retrieved hierarchy and deciding mutation
+[evolution 10:52:26] genericity warning in EvolutionDecision: ['quarkus']
+[evolution 10:52:26] decision 6/7: NO_CHANGE, target=preserve_external_rest_routes_during_framework_migration, apply=False
+[evolution 10:52:26] knowledge 7/7: knowledge_9af18ed6b347 (Add a minimal target-framework root resource that returns the health-style response required by the repository's smoke check.)
+[evolution 10:52:26] retrieving top 5 related operators with BM25
+[evolution 10:52:26]   candidate[0]: migrate_framework, score=6.8551, parent=None
+[evolution 10:52:26]   candidate[1]: repair_framework, score=3.6603, parent=None
+[evolution 10:52:26]   candidate[2]: replace_framework_build_integration_and_packaging, score=2.6865, parent=migrate_framework
+[evolution 10:52:26]   candidate[3]: preserve_external_rest_routes_during_framework_migration, score=2.6565, parent=migrate_framework
+[evolution 10:52:26]   candidate[4]: replace_legacy_server_bootstrap_with_executable_runtime, score=2.6435, parent=migrate_framework
+[evolution 10:52:26] comparing retrieved hierarchy and deciding mutation
+[evolution 10:52:41] decision 7/7: NO_CHANGE, target=preserve_external_rest_routes_during_framework_migration, apply=False
+[evolution 10:52:41] operator library version: 4 -> 4
+[evolution 10:52:41] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__cart__spring__quarkus/attempt-0001/adaptive__business_domain__cart__spring__quarkus/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 10:52:41] applying reviewed decision 1/7: NO_CHANGE
+[evolution 10:52:41] genericity warning in RepairKnowledge: ['business']
+[evolution 10:52:41] applying reviewed decision 2/7: NO_CHANGE
+[evolution 10:52:41] genericity warning in RepairKnowledge: ['business']
+[evolution 10:52:41] applying reviewed decision 3/7: ADD
+[evolution 10:52:41] applying reviewed decision 4/7: NO_CHANGE
+[evolution 10:52:41] applying reviewed decision 5/7: NO_CHANGE
+[evolution 10:52:41] genericity warning in EvolutionDecision: ['quarkus']
+[evolution 10:52:41] applying reviewed decision 6/7: NO_CHANGE
+[evolution 10:52:41] applying reviewed decision 7/7: NO_CHANGE
+[evolution 10:52:41] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__cart__spring__quarkus/attempt-0001/adaptive__business_domain__cart__spring__quarkus/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-10T21:52:41.653361+00:00] evolution=SUCCESS; library v4 -> v5, active=5, experiences=6

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>String Encoder</title>
+    <link rel="stylesheet" th:href="@{/css/default.css}" href="/css/default.css">
+</head>
+<body>
+<h2>String Encoder</h2>
+<p>Enter a string and an integer, then click Encode.</p>
+<p>Depending on which alternative is enabled, the coder bean will either display the argument values or return a
+    string that shifts the letters in the original string by the value you specify. The value must be between 0 and 26.</p>
+<form id="encodeit" th:action="@{/encode}" th:object="${coderForm}" method="post">
+    <input type="hidden" name="jakarta.faces.ViewState" value="spring-mvc">
+    <p>
+        <label for="inputString">Enter a string: </label>
+        <input id="inputString" th:field="*{inputString}">
+        <label for="transVal">Enter the number of letters to shift by: </label>
+        <input id="transVal" type="number" min="0" max="26" th:field="*{transVal}">
+    </p>
+    <p style="color:#d20005" th:if="${#fields.hasErrors('transVal')}" th:errors="*{transVal}"></p>
+    <p><button id="submit" type="submit">Encode</button></p>
+    <p><span>Result: </span><span id="outputString" style="color:blue" th:text="*{codedString}"></span></p>
+</form>
+<form th:action="@{/reset}" method="post"><p><button type="submit">Reset</button></p></form>
+<div class="messagecolor">
+    <p style="color:#d20005" th:if="${validationError}" th:text="${validationError}"></p>
+</div>
+</body>
+</html>

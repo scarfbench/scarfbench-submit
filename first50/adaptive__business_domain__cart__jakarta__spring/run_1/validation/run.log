@@ -1,0 +1,51 @@
+[adaptive-evolution 2026-11-10T16:07:46.758196+00:00] round 1/3, library v0, selected learned operators: []
+[adaptive-evolution 2026-11-10T16:12:20.671174+00:00] independent target build/tests: exit=0, test counts={'tests': 3, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-10T16:12:20.671612+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 05:12:20] trace attempt-0001__adaptive__business_domain__cart__jakarta__spring: distilling all independent repair knowledge
+[evolution 05:12:52] distilled 7 independent knowledge item(s)
+[evolution 05:12:52] knowledge 1/7: knowledge_9236009ab1fe (Introduce the target framework application entry point and remove obsolete source-framework bootstrap, runtime configuration, and dependency-injection descriptor artifacts.)
+[evolution 05:12:52] retrieving top 5 related operators with BM25
+[evolution 05:12:52]   candidate[0]: migrate_framework, score=2.1567, parent=None
+[evolution 05:12:52]   candidate[1]: repair_framework, score=2.0627, parent=None
+[evolution 05:12:52] comparing retrieved hierarchy and deciding mutation
+[evolution 05:13:30] decision 1/7: ADD, target=replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 05:13:30] knowledge 2/7: knowledge_869c215430f2 (Replace source-runtime dependency and plugin management with target-framework dependency management, target web/test dependencies, executable archive packaging, repackaging support, and an explicitly compatible compiler configuration.)
+[evolution 05:13:30] retrieving top 5 related operators with BM25
+[evolution 05:13:30]   candidate[0]: migrate_framework, score=2.0360, parent=None
+[evolution 05:13:30]   candidate[1]: repair_framework, score=1.9407, parent=None
+[evolution 05:13:30] comparing retrieved hierarchy and deciding mutation
+[evolution 05:13:54] decision 2/7: ADD, target=reconfigure_framework_build_packaging, apply=False
+[evolution 05:13:54] knowledge 3/7: knowledge_efe0778eb2d1 (Remove source component annotations, register the implementation as a target-framework service, and replace framework-managed field injection with constructor injection while retaining the service interface.)
+[evolution 05:13:54] retrieving top 5 related operators with BM25
+[evolution 05:13:54]   candidate[0]: migrate_framework, score=1.8879, parent=None
+[evolution 05:13:54]   candidate[1]: repair_framework, score=1.8101, parent=None
+[evolution 05:13:54] comparing retrieved hierarchy and deciding mutation
+[evolution 05:14:27] decision 3/7: ADD, target=migrate_enterprise_service_injection, apply=False
+[evolution 05:14:27] knowledge 4/7: knowledge_932a5c12c107 (Translate source REST resource annotations and response construction to target MVC controller mappings and response types, using explicit request-variable binding where required.)
+[evolution 05:14:27] retrieving top 5 related operators with BM25
+[evolution 05:14:27]   candidate[0]: migrate_framework, score=2.0360, parent=None
+[evolution 05:14:27]   candidate[1]: repair_framework, score=1.9407, parent=None
+[evolution 05:14:27] comparing retrieved hierarchy and deciding mutation
+[evolution 05:14:34] decision 4/7: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 05:14:34] knowledge 5/7: knowledge_e356bf9823ba (Express the expected server port and context path in the target framework configuration so externally visible endpoint locations remain stable.)
+[evolution 05:14:34] retrieving top 5 related operators with BM25
+[evolution 05:14:34]   candidate[0]: migrate_framework, score=2.2266, parent=None
+[evolution 05:14:34]   candidate[1]: repair_framework, score=2.1154, parent=None
+[evolution 05:14:34] comparing retrieved hierarchy and deciding mutation
+[evolution 05:14:59] decision 5/7: ADD, target=preserve_external_endpoint_configuration, apply=False
+[evolution 05:14:59] knowledge 6/7: knowledge_7c06b959ae2a (Synchronize operations over shared mutable state and return immutable collection snapshots instead of exposing the backing collection.)
+[evolution 05:14:59] retrieving top 5 related operators with BM25
+[evolution 05:14:59]   candidate[0]: migrate_framework, score=0.7708, parent=None
+[evolution 05:14:59]   candidate[1]: repair_framework, score=0.7240, parent=None
+[evolution 05:14:59] comparing retrieved hierarchy and deciding mutation
+[evolution 05:15:35] decision 6/7: ADD, target=harden_stateful_service_concurrency, apply=False
+[evolution 05:15:35] knowledge 7/7: knowledge_8d5237f87706 (Add target-framework application-context and mock-web tests covering representative endpoint lifecycle, validation, error, and health behavior.)
+[evolution 05:15:35] retrieving top 5 related operators with BM25
+[evolution 05:15:35]   candidate[0]: migrate_framework, score=1.5077, parent=None
+[evolution 05:15:35]   candidate[1]: repair_framework, score=1.4395, parent=None
+[evolution 05:15:35] comparing retrieved hierarchy and deciding mutation
+[evolution 05:15:42] decision 7/7: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 05:15:42] operator library version: 0 -> 0
+[evolution 05:15:42] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__cart__jakarta__spring/attempt-0001/adaptive__business_domain__cart__jakarta__spring/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 05:15:42] applying reviewed decision 1/7: ADD
+[adaptive-evolution 2026-11-10T16:15:42.657860+00:00] evolution=FAILURE; library v0 -> v1, active=1, experiences=2

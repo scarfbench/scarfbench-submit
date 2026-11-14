@@ -1,0 +1,105 @@
+[adaptive-evolution 2026-11-13T00:58:25.903411+00:00] round 1/3, library v34, selected learned operators: ['configure_target_runtime_session_timeout_during_framework_migration']
+[adaptive-evolution 2026-11-13T01:03:50.912666+00:00] independent target build/tests: exit=1, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-13T01:03:51.135718+00:00] round 2/3, library v34, selected learned operators: ['configure_target_runtime_session_timeout_during_framework_migration']
+[adaptive-evolution 2026-11-13T01:06:27.064831+00:00] independent target build/tests: exit=0, test counts={'tests': 1, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-13T01:06:27.071088+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 14:06:27] trace attempt-0001__adaptive__dependency_injection__guessnumber__jakarta__quarkus: distilling all independent repair knowledge
+[evolution 14:07:15] genericity warning in RepairKnowledge: ['dependency']
+[evolution 14:07:15] distilled 9 independent knowledge item(s)
+[evolution 14:07:15] knowledge 1/9: knowledge_c8cd8a0e461d (Replace the source platform API and managed-server build configuration with the target runtime's dependency management, required web extension, compatible compiler configuration, build integration, and executable packaging.)
+[evolution 14:07:15] retrieving top 5 related operators with BM25
+[evolution 14:07:15]   candidate[0]: migrate_framework, score=33.1836, parent=None
+[evolution 14:07:15]   candidate[1]: replace_framework_build_integration_and_packaging, score=20.5615, parent=migrate_framework
+[evolution 14:07:15]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=19.1103, parent=replace_framework_build_integration_and_packaging
+[evolution 14:07:15]   candidate[3]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=18.0037, parent=migrate_framework
+[evolution 14:07:15]   candidate[4]: replace_legacy_server_bootstrap_with_executable_runtime, score=15.0409, parent=migrate_framework
+[evolution 14:07:15] comparing retrieved hierarchy and deciding mutation
+[evolution 14:07:31] decision 1/9: NO_CHANGE, target=migrate_framework,replace_framework_build_integration_and_packaging,replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 14:07:31] knowledge 2/9: knowledge_cc289fd8f9c9 (Remove the obsolete managed-server bootstrap after installing the target runtime's executable build and startup integration.)
+[evolution 14:07:31] retrieving top 5 related operators with BM25
+[evolution 14:07:31]   candidate[0]: migrate_framework, score=31.4659, parent=None
+[evolution 14:07:31]   candidate[1]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=16.6083, parent=migrate_framework
+[evolution 14:07:31]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=16.5207, parent=migrate_framework
+[evolution 14:07:31]   candidate[3]: replace_framework_build_integration_and_packaging, score=15.2161, parent=migrate_framework
+[evolution 14:07:31]   candidate[4]: align_container_descriptors_with_migrated_artifacts, score=14.6904, parent=replace_framework_build_integration_and_packaging
+[evolution 14:07:31] comparing retrieved hierarchy and deciding mutation
+[evolution 14:07:36] decision 2/9: NO_CHANGE, target=replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 14:07:36] knowledge 3/9: knowledge_204ca1b9ecf4 (Configure the target runtime to retain the application's externally expected HTTP port during framework migration.)
+[evolution 14:07:36] retrieving top 5 related operators with BM25
+[evolution 14:07:36]   candidate[0]: migrate_framework, score=23.0469, parent=None
+[evolution 14:07:36]   candidate[1]: configure_target_runtime_session_timeout_during_framework_migration, score=13.0173, parent=migrate_framework
+[evolution 14:07:36]   candidate[2]: preserve_external_http_port_during_framework_migration, score=10.2827, parent=migrate_framework
+[evolution 14:07:36]   candidate[3]: migrate_web_deployment_descriptor_to_target_archive_layout, score=9.1119, parent=migrate_framework
+[evolution 14:07:36]   candidate[4]: add_executable_application_bootstrap_for_component_discovery, score=8.4761, parent=migrate_framework
+[evolution 14:07:36] comparing retrieved hierarchy and deciding mutation
+[evolution 14:07:48] decision 3/9: NO_CHANGE, target=preserve_external_http_port_during_framework_migration, apply=False
+[evolution 14:07:48] knowledge 4/9: knowledge_13c3a16c29b0 (Set the target runtime's HTTP root path to preserve the application's existing external context path.)
+[evolution 14:07:48] retrieving top 5 related operators with BM25
+[evolution 14:07:48]   candidate[0]: migrate_framework, score=26.3850, parent=None
+[evolution 14:07:48]   candidate[1]: preserve_existing_test_provenance_during_framework_migration, score=15.3156, parent=migrate_framework
+[evolution 14:07:48]   candidate[2]: preserve_external_context_path_during_framework_migration, score=11.4310, parent=migrate_framework
+[evolution 14:07:48]   candidate[3]: preserve_external_http_port_during_framework_migration, score=9.4741, parent=migrate_framework
+[evolution 14:07:48]   candidate[4]: repair_framework, score=9.2614, parent=None
+[evolution 14:07:48] comparing retrieved hierarchy and deciding mutation
+[evolution 14:07:54] decision 4/9: NO_CHANGE, target=preserve_external_context_path_during_framework_migration, apply=False
+[evolution 14:07:54] knowledge 5/9: knowledge_2965538b7d44 (Relocate the servlet deployment descriptor to the target runtime's supported resource layout while retaining its rendered-page mapping and welcome-page configuration.)
+[evolution 14:07:54] retrieving top 5 related operators with BM25
+[evolution 14:07:54]   candidate[0]: migrate_framework, score=32.5796, parent=None
+[evolution 14:07:54]   candidate[1]: migrate_web_deployment_descriptor_to_target_archive_layout, score=25.6703, parent=migrate_framework
+[evolution 14:07:54]   candidate[2]: relocate_legacy_web_assets_to_runtime_static_resources, score=16.4131, parent=migrate_framework
+[evolution 14:07:54]   candidate[3]: add_executable_application_bootstrap_for_component_discovery, score=12.1360, parent=migrate_framework
+[evolution 14:07:54]   candidate[4]: replace_legacy_server_bootstrap_with_executable_runtime, score=9.8224, parent=migrate_framework
+[evolution 14:07:54] comparing retrieved hierarchy and deciding mutation
+[evolution 14:08:01] decision 5/9: NO_CHANGE, target=migrate_web_deployment_descriptor_to_target_archive_layout, apply=False
+[evolution 14:08:01] knowledge 6/9: knowledge_c1b851598e22 (Preserve the existing session-timeout declaration when relocating the web descriptor for the target runtime.)
+[evolution 14:08:01] retrieving top 5 related operators with BM25
+[evolution 14:08:01]   candidate[0]: migrate_framework, score=34.2312, parent=None
+[evolution 14:08:01]   candidate[1]: migrate_web_deployment_descriptor_to_target_archive_layout, score=25.6482, parent=migrate_framework
+[evolution 14:08:01]   candidate[2]: preserve_existing_test_provenance_during_framework_migration, score=15.2438, parent=migrate_framework
+[evolution 14:08:01]   candidate[3]: configure_target_runtime_session_timeout_during_framework_migration, score=13.9415, parent=migrate_framework
+[evolution 14:08:01]   candidate[4]: align_container_descriptors_with_migrated_artifacts, score=9.2434, parent=replace_framework_build_integration_and_packaging
+[evolution 14:08:01] comparing retrieved hierarchy and deciding mutation
+[evolution 14:08:13] decision 6/9: NO_CHANGE, target=configure_target_runtime_session_timeout_during_framework_migration,migrate_web_deployment_descriptor_to_target_archive_layout, apply=False
+[evolution 14:08:13] knowledge 7/9: knowledge_3437245cdfca (Relocate server-rendered views and their shared template into the target runtime's web-resource layout without changing the forms, validation controls, messages, or navigation contract.)
+[evolution 14:08:13] retrieving top 5 related operators with BM25
+[evolution 14:08:13]   candidate[0]: migrate_framework, score=36.0872, parent=None
+[evolution 14:08:13]   candidate[1]: migrate_web_deployment_descriptor_to_target_archive_layout, score=18.9377, parent=migrate_framework
+[evolution 14:08:13]   candidate[2]: replace_legacy_server_rendered_view_with_annotated_http_handler, score=18.8757, parent=migrate_framework
+[evolution 14:08:13]   candidate[3]: relocate_legacy_web_assets_to_runtime_static_resources, score=18.6968, parent=migrate_framework
+[evolution 14:08:13]   candidate[4]: implement_validated_action_endpoints_with_post_redirect_get, score=17.5866, parent=replace_legacy_server_rendered_view_with_annotated_http_handler
+[evolution 14:08:13] comparing retrieved hierarchy and deciding mutation
+[evolution 14:08:33] decision 7/9: ADD, target=relocate_server_rendered_views_to_target_resource_layout, apply=False
+[evolution 14:08:33] knowledge 8/9: knowledge_7da8ec4550d5 (Relocate the stylesheet to the target runtime's static web-resource layout while preserving its resource-library URL.)
+[evolution 14:08:33] retrieving top 5 related operators with BM25
+[evolution 14:08:33]   candidate[0]: migrate_framework, score=30.3591, parent=None
+[evolution 14:08:33]   candidate[1]: relocate_legacy_web_assets_to_runtime_static_resources, score=25.7342, parent=migrate_framework
+[evolution 14:08:33]   candidate[2]: migrate_web_deployment_descriptor_to_target_archive_layout, score=17.5400, parent=migrate_framework
+[evolution 14:08:33]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=13.3159, parent=migrate_framework
+[evolution 14:08:33]   candidate[4]: replace_legacy_server_rendered_view_with_annotated_http_handler, score=9.5586, parent=migrate_framework
+[evolution 14:08:33] comparing retrieved hierarchy and deciding mutation
+[evolution 14:08:41] decision 8/9: NO_CHANGE, target=relocate_legacy_web_assets_to_runtime_static_resources, apply=False
+[evolution 14:08:41] knowledge 9/9: knowledge_52a5392f576b (Add the target runtime's test integration module and the required HTTP test-client module as test-scoped build dependencies so the existing pinned target test compiles and executes.)
+[evolution 14:08:41] retrieving top 5 related operators with BM25
+[evolution 14:08:41]   candidate[0]: migrate_framework, score=33.4413, parent=None
+[evolution 14:08:41]   candidate[1]: replace_framework_build_integration_and_packaging, score=17.3228, parent=migrate_framework
+[evolution 14:08:41]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=17.1569, parent=replace_framework_build_integration_and_packaging
+[evolution 14:08:41]   candidate[3]: add_executable_application_bootstrap_for_component_discovery, score=12.5232, parent=migrate_framework
+[evolution 14:08:41]   candidate[4]: preserve_existing_test_provenance_during_framework_migration, score=12.4686, parent=migrate_framework
+[evolution 14:08:41] comparing retrieved hierarchy and deciding mutation
+[evolution 14:08:49] genericity warning in EvolutionDecision: ['dependency']
+[evolution 14:08:49] decision 9/9: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 14:08:49] operator library version: 34 -> 34
+[evolution 14:08:49] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/dependency_injection__guessnumber__jakarta__quarkus/attempt-0001/adaptive__dependency_injection__guessnumber__jakarta__quarkus/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 14:08:50] genericity warning in RepairKnowledge: ['dependency']
+[evolution 14:08:50] applying reviewed decision 1/9: NO_CHANGE
+[evolution 14:08:50] applying reviewed decision 2/9: NO_CHANGE
+[evolution 14:08:50] applying reviewed decision 3/9: NO_CHANGE
+[evolution 14:08:50] applying reviewed decision 4/9: NO_CHANGE
+[evolution 14:08:50] applying reviewed decision 5/9: NO_CHANGE
+[evolution 14:08:50] applying reviewed decision 6/9: NO_CHANGE
+[evolution 14:08:50] applying reviewed decision 7/9: ADD
+[evolution 14:08:50] applying reviewed decision 8/9: NO_CHANGE
+[evolution 14:08:50] genericity warning in EvolutionDecision: ['dependency']
+[evolution 14:08:50] applying reviewed decision 9/9: DEFER
+[evolution 14:08:50] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/dependency_injection__guessnumber__jakarta__quarkus/attempt-0001/adaptive__dependency_injection__guessnumber__jakarta__quarkus/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-13T01:08:50.928920+00:00] evolution=SUCCESS; library v34 -> v35, active=32, experiences=39

@@ -1,0 +1,79 @@
+[adaptive-evolution 2026-11-10T21:38:22.190256+00:00] round 1/3, library v3, selected learned operators: []
+[adaptive-evolution 2026-11-10T21:43:44.682148+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-10T21:43:44.683471+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 10:43:44] trace attempt-0002__adaptive__business_domain__cart__spring__jakarta: distilling all independent repair knowledge
+[evolution 10:44:16] genericity warning in RepairKnowledge: ['jakarta']
+[evolution 10:44:16] genericity warning in RepairKnowledge: ['cart']
+[evolution 10:44:16] genericity warning in RepairKnowledge: ['cart', 'jakarta']
+[evolution 10:44:16] genericity warning in RepairKnowledge: ['jakarta']
+[evolution 10:44:16] distilled 6 independent knowledge item(s)
+[evolution 10:44:16] knowledge 1/6: knowledge_ac9f5f0c02a9 (Remove source-framework parent, dependency-management, plugin, and module dependencies; introduce the target platform API dependency management and provided target APIs while retaining conventional compiler and packaging configuration.)
+[evolution 10:44:16] retrieving top 5 related operators with BM25
+[evolution 10:44:16]   candidate[0]: migrate_framework, score=7.7589, parent=None
+[evolution 10:44:16]   candidate[1]: repair_framework, score=4.7612, parent=None
+[evolution 10:44:16]   candidate[2]: replace_framework_build_integration_and_packaging, score=3.6449, parent=migrate_framework
+[evolution 10:44:16]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=2.5912, parent=migrate_framework
+[evolution 10:44:16]   candidate[4]: preserve_external_rest_routes_during_framework_migration, score=1.2060, parent=migrate_framework
+[evolution 10:44:16] comparing retrieved hierarchy and deciding mutation
+[evolution 10:44:29] decision 1/6: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 10:44:29] knowledge 2/6: knowledge_29cb885ca8f1 (Replace executable-JAR packaging and its framework build plugin with WAR packaging, a target-runtime build integration, and server deployment configuration.)
+[evolution 10:44:29] retrieving top 5 related operators with BM25
+[evolution 10:44:29]   candidate[0]: migrate_framework, score=14.6578, parent=None
+[evolution 10:44:29]   candidate[1]: replace_framework_build_integration_and_packaging, score=7.7864, parent=migrate_framework
+[evolution 10:44:29]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=7.4082, parent=migrate_framework
+[evolution 10:44:29]   candidate[3]: repair_framework, score=4.1769, parent=None
+[evolution 10:44:29]   candidate[4]: preserve_external_rest_routes_during_framework_migration, score=2.0250, parent=migrate_framework
+[evolution 10:44:29] comparing retrieved hierarchy and deciding mutation
+[evolution 10:44:39] decision 2/6: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 10:44:39] knowledge 3/6: knowledge_590a9d3b52a9 (Replace source-framework service and session-scope annotations with target dependency-injection session scope, and make the session-scoped component passivation-capable by implementing serialization.)
+[evolution 10:44:39] retrieving top 5 related operators with BM25
+[evolution 10:44:39]   candidate[0]: migrate_framework, score=8.4772, parent=None
+[evolution 10:44:39]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=4.7847, parent=migrate_framework
+[evolution 10:44:39]   candidate[2]: repair_framework, score=4.5410, parent=None
+[evolution 10:44:39]   candidate[3]: replace_framework_build_integration_and_packaging, score=2.8400, parent=migrate_framework
+[evolution 10:44:39]   candidate[4]: preserve_external_rest_routes_during_framework_migration, score=0.9873, parent=migrate_framework
+[evolution 10:44:39] comparing retrieved hierarchy and deciding mutation
+[evolution 10:45:08] decision 3/6: ADD, target=migrate_session_scoped_component, apply=False
+[evolution 10:45:08] knowledge 4/6: knowledge_8a6adc840286 (Port MVC controllers to Jakarta REST resources by translating route annotations, dependency injection, servlet-session access, response entities, and HTTP status construction while retaining endpoint behavior.)
+[evolution 10:45:08] retrieving top 5 related operators with BM25
+[evolution 10:45:08]   candidate[0]: migrate_framework, score=10.6140, parent=None
+[evolution 10:45:08]   candidate[1]: repair_framework, score=5.5901, parent=None
+[evolution 10:45:08]   candidate[2]: preserve_external_rest_routes_during_framework_migration, score=4.1014, parent=migrate_framework
+[evolution 10:45:08]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=3.9935, parent=migrate_framework
+[evolution 10:45:08]   candidate[4]: replace_framework_build_integration_and_packaging, score=2.0386, parent=migrate_framework
+[evolution 10:45:08] comparing retrieved hierarchy and deciding mutation
+[evolution 10:45:16] decision 4/6: NO_CHANGE, target=preserve_external_rest_routes_during_framework_migration, apply=False
+[evolution 10:45:16] knowledge 5/6: knowledge_568f1815a216 (Replace the executable framework launcher with a Jakarta REST Application bootstrap, remove obsolete source-framework runtime properties, and configure only the target server features needed by the application.)
+[evolution 10:45:16] retrieving top 5 related operators with BM25
+[evolution 10:45:16]   candidate[0]: migrate_framework, score=13.5601, parent=None
+[evolution 10:45:16]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=8.9013, parent=migrate_framework
+[evolution 10:45:16]   candidate[2]: replace_framework_build_integration_and_packaging, score=4.7597, parent=migrate_framework
+[evolution 10:45:16]   candidate[3]: repair_framework, score=4.1769, parent=None
+[evolution 10:45:16]   candidate[4]: preserve_external_rest_routes_during_framework_migration, score=2.0250, parent=migrate_framework
+[evolution 10:45:16] comparing retrieved hierarchy and deciding mutation
+[evolution 10:45:27] genericity warning in EvolutionDecision: ['jakarta']
+[evolution 10:45:27] decision 5/6: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 10:45:27] knowledge 6/6: knowledge_e8725976e851 (Re-establish externally visible routing in the target runtime by configuring the deployment context root, retaining the REST application base path, and adding a deployable root resource when the existing health probe requires one.)
+[evolution 10:45:27] retrieving top 5 related operators with BM25
+[evolution 10:45:27]   candidate[0]: migrate_framework, score=10.5050, parent=None
+[evolution 10:45:27]   candidate[1]: preserve_external_rest_routes_during_framework_migration, score=6.0284, parent=migrate_framework
+[evolution 10:45:27]   candidate[2]: repair_framework, score=5.4613, parent=None
+[evolution 10:45:27]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=2.9344, parent=migrate_framework
+[evolution 10:45:27]   candidate[4]: replace_framework_build_integration_and_packaging, score=2.4844, parent=migrate_framework
+[evolution 10:45:27] comparing retrieved hierarchy and deciding mutation
+[evolution 10:45:34] decision 6/6: NO_CHANGE, target=preserve_external_rest_routes_during_framework_migration, apply=False
+[evolution 10:45:34] operator library version: 3 -> 3
+[evolution 10:45:34] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__cart__spring__jakarta/attempt-0002/adaptive__business_domain__cart__spring__jakarta/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 10:45:34] genericity warning in RepairKnowledge: ['jakarta']
+[evolution 10:45:34] applying reviewed decision 1/6: NO_CHANGE
+[evolution 10:45:34] applying reviewed decision 2/6: NO_CHANGE
+[evolution 10:45:34] genericity warning in RepairKnowledge: ['cart']
+[evolution 10:45:34] applying reviewed decision 3/6: ADD
+[evolution 10:45:34] genericity warning in RepairKnowledge: ['cart', 'jakarta']
+[evolution 10:45:34] applying reviewed decision 4/6: NO_CHANGE
+[evolution 10:45:34] genericity warning in RepairKnowledge: ['jakarta']
+[evolution 10:45:34] genericity warning in EvolutionDecision: ['jakarta']
+[evolution 10:45:34] applying reviewed decision 5/6: DEFER
+[evolution 10:45:34] applying reviewed decision 6/6: NO_CHANGE
+[evolution 10:45:34] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__cart__spring__jakarta/attempt-0002/adaptive__business_domain__cart__spring__jakarta/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-10T21:45:34.849748+00:00] evolution=SUCCESS; library v3 -> v4, active=4, experiences=5

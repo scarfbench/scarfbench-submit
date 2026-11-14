@@ -1,0 +1,145 @@
+[adaptive-evolution 2026-11-13T00:29:55.985378+00:00] round 1/3, library v33, selected learned operators: ['add_executable_application_bootstrap_for_component_discovery', 'replace_framework_build_integration_and_packaging']
+[adaptive-evolution 2026-11-13T00:35:40.675196+00:00] independent target build/tests: exit=0, test counts={'tests': 9, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-13T00:35:40.682552+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 13:35:40] trace attempt-0002__adaptive__dependency_injection__encoder__quarkus__spring: distilling all independent repair knowledge
+[evolution 13:36:24] genericity warning in RepairKnowledge: ['injection']
+[evolution 13:36:24] genericity warning in RepairKnowledge: ['dependency']
+[evolution 13:36:24] genericity warning in RepairKnowledge: ['dependency']
+[evolution 13:36:24] genericity warning in RepairKnowledge: ['injection']
+[evolution 13:36:24] distilled 12 independent knowledge item(s)
+[evolution 13:36:24] knowledge 1/12: knowledge_4229ca43636e (Add an executable target-framework application bootstrap and configure component discovery to include all migrated component package trees.)
+[evolution 13:36:24] retrieving top 5 related operators with BM25
+[evolution 13:36:24]   candidate[0]: migrate_framework, score=31.6997, parent=None
+[evolution 13:36:24]   candidate[1]: add_executable_application_bootstrap_for_component_discovery, score=21.5925, parent=migrate_framework
+[evolution 13:36:24]   candidate[2]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=13.3337, parent=migrate_framework
+[evolution 13:36:24]   candidate[3]: preserve_existing_test_provenance_during_framework_migration, score=11.9820, parent=migrate_framework
+[evolution 13:36:24]   candidate[4]: migrate_legacy_managed_component_to_application_scope, score=11.6972, parent=migrate_framework
+[evolution 13:36:24] comparing retrieved hierarchy and deciding mutation
+[evolution 13:36:32] decision 1/12: NO_CHANGE, target=add_executable_application_bootstrap_for_component_discovery, apply=False
+[evolution 13:36:32] knowledge 2/12: knowledge_5a6a6700c8f2 (Replace source view-action handling with annotated target-framework GET and POST handlers, validated model binding, explicit validation-error rendering, and post/redirect/get result preservation while retaining legacy-compatible routes.)
+[evolution 13:36:32] retrieving top 5 related operators with BM25
+[evolution 13:36:32]   candidate[0]: implement_validated_action_endpoints_with_post_redirect_get, score=37.7389, parent=replace_legacy_server_rendered_view_with_annotated_http_handler
+[evolution 13:36:32]   candidate[1]: replace_legacy_server_rendered_view_with_annotated_http_handler, score=36.5873, parent=migrate_framework
+[evolution 13:36:32]   candidate[2]: migrate_framework, score=31.9371, parent=None
+[evolution 13:36:32]   candidate[3]: migrate_web_deployment_descriptor_to_target_archive_layout, score=12.9891, parent=migrate_framework
+[evolution 13:36:32]   candidate[4]: preserve_existing_test_provenance_during_framework_migration, score=11.9544, parent=migrate_framework
+[evolution 13:36:32] comparing retrieved hierarchy and deciding mutation
+[evolution 13:36:39] decision 2/12: NO_CHANGE, target=implement_validated_action_endpoints_with_post_redirect_get, apply=False
+[evolution 13:36:39] knowledge 3/12: knowledge_3f88a711973d (Introduce a target-framework form model carrying the original input, transformation, and result state, and express the observed input bounds with target-compatible validation constraints.)
+[evolution 13:36:39] retrieving top 5 related operators with BM25
+[evolution 13:36:39]   candidate[0]: migrate_framework, score=15.6327, parent=None
+[evolution 13:36:39]   candidate[1]: align_container_descriptors_with_migrated_artifacts, score=9.1410, parent=replace_framework_build_integration_and_packaging
+[evolution 13:36:39]   candidate[2]: migrate_web_deployment_descriptor_to_target_archive_layout, score=9.1145, parent=migrate_framework
+[evolution 13:36:39]   candidate[3]: align_migrated_component_packages_with_target_contract, score=8.7877, parent=migrate_framework
+[evolution 13:36:39]   candidate[4]: replace_framework_build_integration_and_packaging, score=8.7271, parent=migrate_framework
+[evolution 13:36:39] comparing retrieved hierarchy and deciding mutation
+[evolution 13:36:47] decision 3/12: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 13:36:47] knowledge 4/12: knowledge_7de955f46e93 (Replace source-framework request scope and field injection with a target-framework request-scoped component using constructor injection while retaining the component's application behavior.)
+[evolution 13:36:47] retrieving top 5 related operators with BM25
+[evolution 13:36:47]   candidate[0]: migrate_framework, score=23.2267, parent=None
+[evolution 13:36:47]   candidate[1]: migrate_legacy_managed_component_to_application_scope, score=13.8365, parent=migrate_framework
+[evolution 13:36:47]   candidate[2]: align_migrated_component_packages_with_target_contract, score=11.4052, parent=migrate_framework
+[evolution 13:36:47]   candidate[3]: align_container_descriptors_with_migrated_artifacts, score=11.1748, parent=replace_framework_build_integration_and_packaging
+[evolution 13:36:47]   candidate[4]: replace_framework_build_integration_and_packaging, score=11.0392, parent=migrate_framework
+[evolution 13:36:47] comparing retrieved hierarchy and deciding mutation
+[evolution 13:37:17] genericity warning in EvolutionDecision: ['injection']
+[evolution 13:37:17] decision 4/12: NO_CHANGE, target=migrate_managed_component_wiring_to_target_context, apply=False
+[evolution 13:37:17] knowledge 5/12: knowledge_184af029987c (Register both implementations as target-framework components and use complementary activation profiles so the normal implementation is selected by default and the alternative implementation is selected only in the alternative mode.)
+[evolution 13:37:17] retrieving top 5 related operators with BM25
+[evolution 13:37:17]   candidate[0]: migrate_framework, score=12.6604, parent=None
+[evolution 13:37:17]   candidate[1]: repair_framework, score=10.3443, parent=None
+[evolution 13:37:17]   candidate[2]: add_executable_application_bootstrap_for_component_discovery, score=8.1144, parent=migrate_framework
+[evolution 13:37:17]   candidate[3]: migrate_application_scoped_component_to_discoverable_service, score=8.1144, parent=migrate_framework
+[evolution 13:37:17]   candidate[4]: align_migrated_component_packages_with_target_contract, score=6.8834, parent=migrate_framework
+[evolution 13:37:17] comparing retrieved hierarchy and deciding mutation
+[evolution 13:37:47] genericity warning in EvolutionDecision: ['injection']
+[evolution 13:37:47] decision 5/12: ADD, target=migrate_conditional_implementation_selection_to_target_context, apply=False
+[evolution 13:37:47] knowledge 6/12: knowledge_42cbf1f806eb (Replace source-framework dependency management, runtime and test dependencies, build plugins, obsolete native-build configuration, packaging settings, and compiler configuration with target-framework equivalents and executable archive repackaging.)
+[evolution 13:37:47] retrieving top 5 related operators with BM25
+[evolution 13:37:47]   candidate[0]: migrate_framework, score=25.8993, parent=None
+[evolution 13:37:47]   candidate[1]: replace_framework_build_integration_and_packaging, score=20.2087, parent=migrate_framework
+[evolution 13:37:47]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=18.7741, parent=replace_framework_build_integration_and_packaging
+[evolution 13:37:47]   candidate[3]: preserve_existing_test_provenance_during_framework_migration, score=11.9544, parent=migrate_framework
+[evolution 13:37:47]   candidate[4]: replace_legacy_server_bootstrap_with_executable_runtime, score=11.5981, parent=migrate_framework
+[evolution 13:37:47] comparing retrieved hierarchy and deciding mutation
+[evolution 13:38:00] genericity warning in EvolutionDecision: ['dependency']
+[evolution 13:38:00] decision 6/12: NO_CHANGE, target=replace_framework_build_integration_and_packaging,align_container_descriptors_with_migrated_artifacts, apply=False
+[evolution 13:38:00] knowledge 7/12: knowledge_752c82c70207 (Translate the source runtime's HTTP root-path configuration into the target runtime's servlet context-path configuration while preserving the externally visible application path.)
+[evolution 13:38:00] retrieving top 5 related operators with BM25
+[evolution 13:38:00]   candidate[0]: migrate_framework, score=23.0510, parent=None
+[evolution 13:38:00]   candidate[1]: repair_framework, score=9.3819, parent=None
+[evolution 13:38:00]   candidate[2]: add_executable_application_bootstrap_for_component_discovery, score=8.0840, parent=migrate_framework
+[evolution 13:38:00]   candidate[3]: migrate_cross_cutting_interception_mechanism, score=7.6308, parent=migrate_framework
+[evolution 13:38:00]   candidate[4]: preserve_existing_test_provenance_during_framework_migration, score=7.4412, parent=migrate_framework
+[evolution 13:38:00] comparing retrieved hierarchy and deciding mutation
+[evolution 13:38:12] decision 7/12: NO_CHANGE, target=preserve_external_context_path_during_framework_migration, apply=False
+[evolution 13:38:12] knowledge 8/12: knowledge_40d9ab009dce (Express the existing session timeout using the target runtime's session configuration mechanism.)
+[evolution 13:38:12] retrieving top 5 related operators with BM25
+[evolution 13:38:12]   candidate[0]: migrate_framework, score=26.2675, parent=None
+[evolution 13:38:12]   candidate[1]: configure_target_runtime_session_timeout_during_framework_migration, score=14.0033, parent=migrate_framework
+[evolution 13:38:12]   candidate[2]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=13.5401, parent=migrate_framework
+[evolution 13:38:12]   candidate[3]: migrate_web_deployment_descriptor_to_target_archive_layout, score=10.6167, parent=migrate_framework
+[evolution 13:38:12]   candidate[4]: align_container_descriptors_with_migrated_artifacts, score=9.1184, parent=replace_framework_build_integration_and_packaging
+[evolution 13:38:12] comparing retrieved hierarchy and deciding mutation
+[evolution 13:38:18] decision 8/12: NO_CHANGE, target=configure_target_runtime_session_timeout_during_framework_migration, apply=False
+[evolution 13:38:18] knowledge 9/12: knowledge_6d50f42362f9 (Replace the source-framework view with a target-template form bound to the migrated model and handlers, preserving visible content, actions, validation output, results, reset behavior, styling references, and required legacy-compatible hidden form state.)
+[evolution 13:38:18] retrieving top 5 related operators with BM25
+[evolution 13:38:18]   candidate[0]: migrate_framework, score=28.2159, parent=None
+[evolution 13:38:18]   candidate[1]: replace_legacy_server_rendered_view_with_annotated_http_handler, score=19.8467, parent=migrate_framework
+[evolution 13:38:18]   candidate[2]: implement_validated_action_endpoints_with_post_redirect_get, score=17.6176, parent=replace_legacy_server_rendered_view_with_annotated_http_handler
+[evolution 13:38:18]   candidate[3]: align_container_descriptors_with_migrated_artifacts, score=13.9315, parent=replace_framework_build_integration_and_packaging
+[evolution 13:38:18]   candidate[4]: replace_framework_build_integration_and_packaging, score=13.7528, parent=migrate_framework
+[evolution 13:38:18] comparing retrieved hierarchy and deciding mutation
+[evolution 13:38:31] decision 9/12: NO_CHANGE, target=replace_legacy_server_rendered_view_with_annotated_http_handler,implement_validated_action_endpoints_with_post_redirect_get, apply=False
+[evolution 13:38:31] knowledge 10/12: knowledge_f278f882affe (Port existing application tests from the source-framework test bootstrap to the target-framework application-test context and injection mechanism without changing their test cases or assertions.)
+[evolution 13:38:31] retrieving top 5 related operators with BM25
+[evolution 13:38:31]   candidate[0]: migrate_framework, score=20.2818, parent=None
+[evolution 13:38:31]   candidate[1]: preserve_existing_test_provenance_during_framework_migration, score=11.9820, parent=migrate_framework
+[evolution 13:38:31]   candidate[2]: replace_framework_build_integration_and_packaging, score=7.6800, parent=migrate_framework
+[evolution 13:38:31]   candidate[3]: migrate_cross_cutting_interception_mechanism, score=7.6547, parent=migrate_framework
+[evolution 13:38:31]   candidate[4]: add_executable_application_bootstrap_for_component_discovery, score=7.0869, parent=migrate_framework
+[evolution 13:38:31] comparing retrieved hierarchy and deciding mutation
+[evolution 13:38:39] genericity warning in EvolutionDecision: ['injection']
+[evolution 13:38:39] decision 10/12: NO_CHANGE, target=preserve_existing_test_provenance_during_framework_migration, apply=False
+[evolution 13:38:39] knowledge 11/12: knowledge_6e6c814e1637 (Port the alternative-flow test to the target application-test context and activate the target profile that selects the alternative implementation, preserving the original test case and assertions.)
+[evolution 13:38:39] retrieving top 5 related operators with BM25
+[evolution 13:38:39]   candidate[0]: migrate_framework, score=16.4506, parent=None
+[evolution 13:38:39]   candidate[1]: preserve_existing_test_provenance_during_framework_migration, score=11.9820, parent=migrate_framework
+[evolution 13:38:39]   candidate[2]: repair_framework, score=6.9442, parent=None
+[evolution 13:38:39]   candidate[3]: migrate_application_scoped_component_to_discoverable_service, score=5.9751, parent=migrate_framework
+[evolution 13:38:39]   candidate[4]: migrate_legacy_managed_component_to_application_scope, score=5.9751, parent=migrate_framework
+[evolution 13:38:39] comparing retrieved hierarchy and deciding mutation
+[evolution 13:39:04] decision 11/12: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 13:39:04] knowledge 12/12: knowledge_685729211632 (Update all retained container-definition variants to use the target executable archive and compatible Java runtime instead of the source framework's layered, legacy, or native artifact layouts.)
+[evolution 13:39:04] retrieving top 5 related operators with BM25
+[evolution 13:39:04]   candidate[0]: migrate_framework, score=24.4518, parent=None
+[evolution 13:39:04]   candidate[1]: align_container_descriptors_with_migrated_artifacts, score=18.9325, parent=replace_framework_build_integration_and_packaging
+[evolution 13:39:04]   candidate[2]: replace_framework_build_integration_and_packaging, score=18.7800, parent=migrate_framework
+[evolution 13:39:04]   candidate[3]: migrate_web_deployment_descriptor_to_target_archive_layout, score=13.5473, parent=migrate_framework
+[evolution 13:39:04]   candidate[4]: replace_legacy_server_bootstrap_with_executable_runtime, score=9.6727, parent=migrate_framework
+[evolution 13:39:04] comparing retrieved hierarchy and deciding mutation
+[evolution 13:39:15] decision 12/12: NO_CHANGE, target=align_container_descriptors_with_migrated_artifacts, apply=False
+[evolution 13:39:15] operator library version: 33 -> 33
+[evolution 13:39:15] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/dependency_injection__encoder__quarkus__spring/attempt-0002/adaptive__dependency_injection__encoder__quarkus__spring/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 13:39:15] applying reviewed decision 1/12: NO_CHANGE
+[evolution 13:39:15] applying reviewed decision 2/12: NO_CHANGE
+[evolution 13:39:15] applying reviewed decision 3/12: DEFER
+[evolution 13:39:15] genericity warning in RepairKnowledge: ['injection']
+[evolution 13:39:15] genericity warning in EvolutionDecision: ['injection']
+[evolution 13:39:15] applying reviewed decision 4/12: NO_CHANGE
+[evolution 13:39:15] genericity warning in RepairKnowledge: ['dependency']
+[evolution 13:39:15] genericity warning in EvolutionDecision: ['injection']
+[evolution 13:39:15] applying reviewed decision 5/12: ADD
+[evolution 13:39:15] genericity warning in RepairKnowledge: ['dependency']
+[evolution 13:39:15] genericity warning in EvolutionDecision: ['dependency']
+[evolution 13:39:15] applying reviewed decision 6/12: NO_CHANGE
+[evolution 13:39:15] applying reviewed decision 7/12: NO_CHANGE
+[evolution 13:39:15] applying reviewed decision 8/12: NO_CHANGE
+[evolution 13:39:15] applying reviewed decision 9/12: NO_CHANGE
+[evolution 13:39:15] genericity warning in RepairKnowledge: ['injection']
+[evolution 13:39:15] genericity warning in EvolutionDecision: ['injection']
+[evolution 13:39:15] applying reviewed decision 10/12: NO_CHANGE
+[evolution 13:39:16] applying reviewed decision 11/12: DEFER
+[evolution 13:39:16] applying reviewed decision 12/12: NO_CHANGE
+[evolution 13:39:16] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/dependency_injection__encoder__quarkus__spring/attempt-0002/adaptive__dependency_injection__encoder__quarkus__spring/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-13T00:39:16.292288+00:00] evolution=SUCCESS; library v33 -> v34, active=31, experiences=37

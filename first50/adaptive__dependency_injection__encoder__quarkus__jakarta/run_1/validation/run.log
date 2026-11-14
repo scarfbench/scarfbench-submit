@@ -1,0 +1,7 @@
+[adaptive-evolution 2026-11-12T19:23:02.534135+00:00] round 1/3, library v33, selected learned operators: ['add_executable_application_bootstrap_for_component_discovery', 'replace_framework_build_integration_and_packaging']
+[adaptive-evolution 2026-11-12T19:27:44.337421+00:00] independent target build/tests: exit=1, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-12T19:27:44.616410+00:00] round 2/3, library v33, selected learned operators: ['add_executable_application_bootstrap_for_component_discovery', 'replace_framework_build_integration_and_packaging']
+[adaptive-evolution 2026-11-12T19:29:45.752966+00:00] independent target build/tests: exit=0, test counts={'tests': 2, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-12T19:29:45.766921+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 08:29:45] trace attempt-0001__adaptive__dependency_injection__encoder__quarkus__jakarta: distilling all independent repair knowledge
+[adaptive-evolution 2026-11-12T19:29:46.634387+00:00] evolution=FAILURE; library v33 -> v33, active=30, experiences=36

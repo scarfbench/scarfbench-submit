@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Bill Payment: Result</title>
+  <link rel="stylesheet" th:href="@{/css/default.css}">
+</head>
+<body>
+  <h2>Bill Payment: Result</h2>
+  <h3>Amount Paid with
+    <span th:text="${paymentBean.paymentOption == 1 ? 'Debit Card: ' : 'Credit Card: '}">Debit Card: </span>
+    <span th:text="${#numbers.formatCurrency(paymentBean.value)}">$0.00</span>
+  </h3>
+  <p><a id="back" th:href="@{/}">Back</a></p>
+</body>
+</html>

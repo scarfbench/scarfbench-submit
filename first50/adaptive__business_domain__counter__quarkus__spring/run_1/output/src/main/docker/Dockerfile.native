@@ -1,0 +1,6 @@
+FROM debian:bookworm-slim
+WORKDIR /application
+COPY target/counter /application/counter
+RUN chmod 0755 /application/counter
+EXPOSE 8080
+ENTRYPOINT ["/application/counter"]

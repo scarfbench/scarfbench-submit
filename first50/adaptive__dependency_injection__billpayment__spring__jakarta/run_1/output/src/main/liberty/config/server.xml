@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Bill Payment Jakarta EE server">
+    <featureManager>
+        <feature>webProfile-10.0</feature>
+    </featureManager>
+    <variable name="http.port" defaultValue="8080"/>
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="${http.port}"/>
+    <webApplication location="billpayment.war" contextRoot="/billpayment"/>
+</server>

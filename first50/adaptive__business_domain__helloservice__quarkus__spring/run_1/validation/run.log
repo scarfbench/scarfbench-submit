@@ -1,0 +1,79 @@
+[adaptive-evolution 2026-11-11T09:27:54.150295+00:00] round 1/3, library v22, selected learned operators: ['migrate_annotated_soap_endpoint_to_managed_runtime', 'replace_framework_build_integration_and_packaging']
+[adaptive-evolution 2026-11-11T09:32:16.231842+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-11T09:32:16.235745+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 22:32:16] trace attempt-0001__adaptive__business_domain__helloservice__quarkus__spring: distilling all independent repair knowledge
+[evolution 22:32:47] distilled 7 independent knowledge item(s)
+[evolution 22:32:47] knowledge 1/7: knowledge_ac7e936f85b1 (Replace source-framework component management on an annotated SOAP implementation with the target framework's discoverable service management while retaining the SOAP contract and operation behavior.)
+[evolution 22:32:47] retrieving top 5 related operators with BM25
+[evolution 22:32:47]   candidate[0]: migrate_framework, score=27.9380, parent=None
+[evolution 22:32:47]   candidate[1]: migrate_application_scoped_component_to_discoverable_service, score=19.0086, parent=migrate_framework
+[evolution 22:32:47]   candidate[2]: migrate_annotated_soap_endpoint_to_managed_runtime, score=11.2311, parent=migrate_framework
+[evolution 22:32:47]   candidate[3]: migrate_legacy_managed_component_to_application_scope, score=10.9945, parent=migrate_framework
+[evolution 22:32:47]   candidate[4]: align_container_descriptors_with_migrated_artifacts, score=10.2091, parent=replace_framework_build_integration_and_packaging
+[evolution 22:32:47] comparing retrieved hierarchy and deciding mutation
+[evolution 22:32:53] decision 1/7: NO_CHANGE, target=migrate_annotated_soap_endpoint_to_managed_runtime, apply=False
+[evolution 22:32:53] knowledge 2/7: knowledge_e7f1d3053f42 (Add target-framework configuration that injects the managed SOAP implementation and publishes it through the target SOAP runtime at the required endpoint path.)
+[evolution 22:32:53] retrieving top 5 related operators with BM25
+[evolution 22:32:53]   candidate[0]: migrate_framework, score=19.2800, parent=None
+[evolution 22:32:53]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=12.7080, parent=migrate_framework
+[evolution 22:32:53]   candidate[2]: migrate_application_scoped_component_to_discoverable_service, score=7.5289, parent=migrate_framework
+[evolution 22:32:53]   candidate[3]: preserve_external_context_path_during_framework_migration, score=6.8167, parent=migrate_framework
+[evolution 22:32:53]   candidate[4]: align_container_descriptors_with_migrated_artifacts, score=6.5438, parent=replace_framework_build_integration_and_packaging
+[evolution 22:32:53] comparing retrieved hierarchy and deciding mutation
+[evolution 22:33:01] decision 2/7: NO_CHANGE, target=migrate_annotated_soap_endpoint_to_managed_runtime, apply=False
+[evolution 22:33:01] knowledge 3/7: knowledge_86a089e27dd3 (Add the target framework's executable application bootstrap at a package root that discovers migrated components and configuration.)
+[evolution 22:33:01] retrieving top 5 related operators with BM25
+[evolution 22:33:01]   candidate[0]: migrate_framework, score=22.6548, parent=None
+[evolution 22:33:01]   candidate[1]: repair_framework, score=10.0926, parent=None
+[evolution 22:33:01]   candidate[2]: migrate_application_scoped_component_to_discoverable_service, score=9.8946, parent=migrate_framework
+[evolution 22:33:01]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=9.5450, parent=migrate_framework
+[evolution 22:33:01]   candidate[4]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=9.4271, parent=migrate_framework
+[evolution 22:33:01] comparing retrieved hierarchy and deciding mutation
+[evolution 22:33:11] decision 3/7: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 22:33:11] knowledge 4/7: knowledge_05af0ca3227a (Replace source-framework dependency management, dependencies, plugins, native-build configuration, and compiler settings with target-framework web and SOAP support, test dependencies, compatible compilation, and executable-archive repackaging.)
+[evolution 22:33:11] retrieving top 5 related operators with BM25
+[evolution 22:33:11]   candidate[0]: migrate_framework, score=23.5575, parent=None
+[evolution 22:33:11]   candidate[1]: replace_framework_build_integration_and_packaging, score=16.6522, parent=migrate_framework
+[evolution 22:33:11]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=15.5056, parent=replace_framework_build_integration_and_packaging
+[evolution 22:33:11]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=10.3413, parent=migrate_framework
+[evolution 22:33:11]   candidate[4]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=10.2136, parent=migrate_framework
+[evolution 22:33:11] comparing retrieved hierarchy and deciding mutation
+[evolution 22:33:19] decision 4/7: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 22:33:19] knowledge 5/7: knowledge_90ca2d80cec9 (Translate source-specific HTTP and SOAP path configuration into target-runtime server, context-path, and SOAP-servlet settings while preserving the external routes.)
+[evolution 22:33:19] retrieving top 5 related operators with BM25
+[evolution 22:33:19]   candidate[0]: migrate_framework, score=34.7444, parent=None
+[evolution 22:33:19]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=11.7106, parent=migrate_framework
+[evolution 22:33:19]   candidate[2]: migrate_servlet_http_adapter_to_annotated_endpoint, score=11.4196, parent=migrate_framework
+[evolution 22:33:19]   candidate[3]: repair_framework, score=10.0576, parent=None
+[evolution 22:33:19]   candidate[4]: preserve_external_context_path_during_framework_migration, score=9.5590, parent=migrate_framework
+[evolution 22:33:19] comparing retrieved hierarchy and deciding mutation
+[evolution 22:33:31] decision 5/7: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 22:33:31] knowledge 6/7: knowledge_d12e03e4e146 (Add a target-runtime static root resource so the preserved application context root returns a successful HTTP response without altering the SOAP endpoint.)
+[evolution 22:33:31] retrieving top 5 related operators with BM25
+[evolution 22:33:31]   candidate[0]: migrate_framework, score=18.6044, parent=None
+[evolution 22:33:31]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=9.5413, parent=migrate_framework
+[evolution 22:33:31]   candidate[2]: ensure_context_root_http_success_during_framework_migration, score=9.1921, parent=migrate_framework
+[evolution 22:33:31]   candidate[3]: repair_framework, score=6.6610, parent=None
+[evolution 22:33:31]   candidate[4]: relocate_legacy_web_assets_to_runtime_static_resources, score=6.2599, parent=migrate_framework
+[evolution 22:33:31] comparing retrieved hierarchy and deciding mutation
+[evolution 22:33:36] decision 6/7: NO_CHANGE, target=ensure_context_root_http_success_during_framework_migration, apply=False
+[evolution 22:33:36] knowledge 7/7: knowledge_a3585e5bf4d1 (Replace source-framework container artifact assumptions and launch configuration with a compatible Java runtime image that copies and executes the migrated archive.)
+[evolution 22:33:36] retrieving top 5 related operators with BM25
+[evolution 22:33:36]   candidate[0]: align_container_descriptors_with_migrated_artifacts, score=24.9015, parent=replace_framework_build_integration_and_packaging
+[evolution 22:33:36]   candidate[1]: replace_framework_build_integration_and_packaging, score=22.9921, parent=migrate_framework
+[evolution 22:33:36]   candidate[2]: migrate_framework, score=18.7358, parent=None
+[evolution 22:33:36]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=12.7213, parent=migrate_framework
+[evolution 22:33:36]   candidate[4]: repair_framework, score=8.0488, parent=None
+[evolution 22:33:36] comparing retrieved hierarchy and deciding mutation
+[evolution 22:33:44] decision 7/7: NO_CHANGE, target=align_container_descriptors_with_migrated_artifacts, apply=False
+[evolution 22:33:44] operator library version: 22 -> 22
+[evolution 22:33:44] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__helloservice__quarkus__spring/attempt-0001/adaptive__business_domain__helloservice__quarkus__spring/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 22:33:44] applying reviewed decision 1/7: NO_CHANGE
+[evolution 22:33:44] applying reviewed decision 2/7: NO_CHANGE
+[evolution 22:33:45] applying reviewed decision 3/7: DEFER
+[evolution 22:33:45] applying reviewed decision 4/7: NO_CHANGE
+[evolution 22:33:45] applying reviewed decision 5/7: DEFER
+[evolution 22:33:45] applying reviewed decision 6/7: NO_CHANGE
+[evolution 22:33:45] applying reviewed decision 7/7: NO_CHANGE
+[evolution 22:33:45] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__helloservice__quarkus__spring/attempt-0001/adaptive__business_domain__helloservice__quarkus__spring/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-11T09:33:45.312672+00:00] evolution=SUCCESS; library v22 -> v22, active=19, experiences=22

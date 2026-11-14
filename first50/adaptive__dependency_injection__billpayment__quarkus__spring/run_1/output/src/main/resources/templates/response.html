@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Bill Payment: Result</title><link rel="stylesheet" th:href="@{/css/default.css}"></head>
+<body>
+<h2>Bill Payment: Result</h2>
+<h3>Amount Paid with <span th:if="${paymentOption == 1}">Debit Card:</span><span th:if="${paymentOption == 2}">Credit Card:</span> <span th:text="${amountDisplay}">$0.00</span></h3>
+<p><a th:href="@{/index.xhtml}">Back</a></p>
+</body></html>
