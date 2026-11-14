@@ -1,0 +1,69 @@
+[adaptive-evolution 2026-11-11T09:33:46.108325+00:00] round 1/3, library v22, selected learned operators: ['replace_embedded_runtime_bootstrap_with_managed_server_deployment']
+[adaptive-evolution 2026-11-11T09:36:58.056715+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-11T09:36:58.059457+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 22:36:58] trace attempt-0001__adaptive__business_domain__helloservice__spring__jakarta: distilling all independent repair knowledge
+[evolution 22:37:25] distilled 6 independent knowledge item(s)
+[evolution 22:37:25] knowledge 1/6: knowledge_8db5b626fc19 (Replace source-framework dependency and executable packaging integration with provided target-platform APIs, web-archive packaging, compatible compilation configuration, and managed-runtime build integration; remove build-time web-service generation that the target runtime no longer requires.)
+[evolution 22:37:25] retrieving top 5 related operators with BM25
+[evolution 22:37:25]   candidate[0]: migrate_framework, score=24.1610, parent=None
+[evolution 22:37:25]   candidate[1]: replace_framework_build_integration_and_packaging, score=16.6190, parent=migrate_framework
+[evolution 22:37:25]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=15.4717, parent=replace_framework_build_integration_and_packaging
+[evolution 22:37:25]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=10.3065, parent=migrate_framework
+[evolution 22:37:25]   candidate[4]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=9.1681, parent=migrate_framework
+[evolution 22:37:25] comparing retrieved hierarchy and deciding mutation
+[evolution 22:37:40] decision 1/6: NO_CHANGE, target=replace_embedded_runtime_bootstrap_with_managed_server_deployment,replace_framework_build_integration_and_packaging, apply=False
+[evolution 22:37:40] knowledge 2/6: knowledge_b551f4ed54c8 (Replace the framework-specific SOAP message endpoint with a server-managed stateless annotated SOAP endpoint while retaining the externally visible operation and message contract.)
+[evolution 22:37:40] retrieving top 5 related operators with BM25
+[evolution 22:37:40]   candidate[0]: migrate_framework, score=29.3697, parent=None
+[evolution 22:37:40]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=16.8131, parent=migrate_framework
+[evolution 22:37:40]   candidate[2]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=15.6399, parent=migrate_framework
+[evolution 22:37:40]   candidate[3]: repair_framework, score=10.4253, parent=None
+[evolution 22:37:40]   candidate[4]: align_container_descriptors_with_migrated_artifacts, score=10.1753, parent=replace_framework_build_integration_and_packaging
+[evolution 22:37:40] comparing retrieved hierarchy and deciding mutation
+[evolution 22:37:49] decision 2/6: NO_CHANGE, target=migrate_annotated_soap_endpoint_to_managed_runtime, apply=False
+[evolution 22:37:49] knowledge 3/6: knowledge_ef0ce31c3167 (Remove the embedded runtime bootstrap and obsolete framework application configuration, then configure the managed server to provide the required runtime capabilities and deploy the application artifact.)
+[evolution 22:37:49] retrieving top 5 related operators with BM25
+[evolution 22:37:49]   candidate[0]: migrate_framework, score=21.6623, parent=None
+[evolution 22:37:49]   candidate[1]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=18.6292, parent=migrate_framework
+[evolution 22:37:49]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=8.5212, parent=migrate_framework
+[evolution 22:37:49]   candidate[3]: migrate_legacy_managed_component_to_application_scope, score=8.2302, parent=migrate_framework
+[evolution 22:37:49]   candidate[4]: repair_framework, score=8.0838, parent=None
+[evolution 22:37:49] comparing retrieved hierarchy and deciding mutation
+[evolution 22:37:59] decision 3/6: NO_CHANGE, target=replace_embedded_runtime_bootstrap_with_managed_server_deployment, apply=False
+[evolution 22:37:59] knowledge 4/6: knowledge_1012156a105c (Remove framework-specific SOAP dispatcher, schema, and WSDL publication configuration after moving endpoint publication responsibility to the managed web-service runtime.)
+[evolution 22:37:59] retrieving top 5 related operators with BM25
+[evolution 22:37:59]   candidate[0]: migrate_framework, score=26.1596, parent=None
+[evolution 22:37:59]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=16.8131, parent=migrate_framework
+[evolution 22:37:59]   candidate[2]: migrate_servlet_http_adapter_to_annotated_endpoint, score=11.6340, parent=migrate_framework
+[evolution 22:37:59]   candidate[3]: migrate_application_scoped_component_to_discoverable_service, score=9.2193, parent=migrate_framework
+[evolution 22:37:59]   candidate[4]: relocate_legacy_web_assets_to_runtime_static_resources, score=8.3279, parent=migrate_framework
+[evolution 22:37:59] comparing retrieved hierarchy and deciding mutation
+[evolution 22:38:09] decision 4/6: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 22:38:09] knowledge 5/6: knowledge_726dc63d3461 (Declare the deployable artifact and its existing external context path in the managed-server configuration when removing embedded-runtime path ownership.)
+[evolution 22:38:09] retrieving top 5 related operators with BM25
+[evolution 22:38:09]   candidate[0]: migrate_framework, score=17.9782, parent=None
+[evolution 22:38:09]   candidate[1]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=15.4620, parent=migrate_framework
+[evolution 22:38:09]   candidate[2]: migrate_legacy_managed_component_to_application_scope, score=8.2264, parent=migrate_framework
+[evolution 22:38:09]   candidate[3]: migrate_annotated_soap_endpoint_to_managed_runtime, score=7.4391, parent=migrate_framework
+[evolution 22:38:09]   candidate[4]: preserve_external_context_path_during_framework_migration, score=6.7453, parent=migrate_framework
+[evolution 22:38:09] comparing retrieved hierarchy and deciding mutation
+[evolution 22:38:19] decision 5/6: NO_CHANGE, target=preserve_external_context_path_during_framework_migration, apply=False
+[evolution 22:38:19] knowledge 6/6: knowledge_c45c1e68d485 (Add a minimal deployable root web resource so the application context root continues to return a successful HTTP response after migration.)
+[evolution 22:38:19] retrieving top 5 related operators with BM25
+[evolution 22:38:19]   candidate[0]: migrate_framework, score=17.1877, parent=None
+[evolution 22:38:19]   candidate[1]: ensure_context_root_http_success_during_framework_migration, score=12.0435, parent=migrate_framework
+[evolution 22:38:19]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=6.5498, parent=replace_framework_build_integration_and_packaging
+[evolution 22:38:19]   candidate[3]: migrate_annotated_soap_endpoint_to_managed_runtime, score=6.4468, parent=migrate_framework
+[evolution 22:38:19]   candidate[4]: relocate_legacy_web_assets_to_runtime_static_resources, score=6.3662, parent=migrate_framework
+[evolution 22:38:19] comparing retrieved hierarchy and deciding mutation
+[evolution 22:38:25] decision 6/6: NO_CHANGE, target=ensure_context_root_http_success_during_framework_migration, apply=False
+[evolution 22:38:25] operator library version: 22 -> 22
+[evolution 22:38:25] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__helloservice__spring__jakarta/attempt-0001/adaptive__business_domain__helloservice__spring__jakarta/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 22:38:25] applying reviewed decision 1/6: NO_CHANGE
+[evolution 22:38:25] applying reviewed decision 2/6: NO_CHANGE
+[evolution 22:38:25] applying reviewed decision 3/6: NO_CHANGE
+[evolution 22:38:25] applying reviewed decision 4/6: DEFER
+[evolution 22:38:25] applying reviewed decision 5/6: NO_CHANGE
+[evolution 22:38:25] applying reviewed decision 6/6: NO_CHANGE
+[evolution 22:38:25] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__helloservice__spring__jakarta/attempt-0001/adaptive__business_domain__helloservice__spring__jakarta/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-11T09:38:25.787332+00:00] evolution=SUCCESS; library v22 -> v22, active=19, experiences=23

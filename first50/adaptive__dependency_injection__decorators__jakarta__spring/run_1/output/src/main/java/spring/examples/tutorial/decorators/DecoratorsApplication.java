@@ -1,0 +1,9 @@
+package org.springframework.tutorial.decorators;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication(scanBasePackages = {"org.springframework.tutorial.decorators", "jakarta.tutorial.decorators"})
+public class DecoratorsApplication {
+    public static void main(String[] args) { SpringApplication.run(DecoratorsApplication.class, args); }
+}

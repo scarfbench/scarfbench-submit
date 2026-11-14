@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Decorators Jakarta EE server">
+    <featureManager><feature>webProfile-10.0</feature></featureManager>
+    <variable name="default.http.port" defaultValue="8080"/>
+    <variable name="default.https.port" defaultValue="8443"/>
+    <httpEndpoint id="defaultHttpEndpoint" host="*"
+                  httpPort="${default.http.port}" httpsPort="${default.https.port}"/>
+    <applicationManager autoExpand="true"/>
+    <webApplication location="decorators.war" contextRoot="/decorators"/>
+</server>

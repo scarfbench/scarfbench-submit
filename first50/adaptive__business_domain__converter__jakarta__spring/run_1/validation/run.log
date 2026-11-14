@@ -1,0 +1,69 @@
+[adaptive-evolution 2026-11-10T21:57:37.047797+00:00] round 1/3, library v6, selected learned operators: ['migrate_legacy_managed_component_to_application_scope']
+[adaptive-evolution 2026-11-10T22:01:33.207089+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-10T22:01:33.208192+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 11:01:33] trace attempt-0001__adaptive__business_domain__converter__jakarta__spring: distilling all independent repair knowledge
+[evolution 11:01:55] distilled 6 independent knowledge item(s)
+[evolution 11:01:55] knowledge 1/6: knowledge_ba2a02e3136a (Replace legacy application-server dependency and plugin configuration with target-framework dependency management, runtime and test dependencies, executable archive packaging, the target build plugin, and a compatible compiler release.)
+[evolution 11:01:55] retrieving top 5 related operators with BM25
+[evolution 11:01:55]   candidate[0]: migrate_framework, score=17.9673, parent=None
+[evolution 11:01:55]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=12.3078, parent=migrate_framework
+[evolution 11:01:55]   candidate[2]: replace_framework_build_integration_and_packaging, score=9.0297, parent=migrate_framework
+[evolution 11:01:55]   candidate[3]: migrate_legacy_managed_component_to_application_scope, score=4.1377, parent=migrate_framework
+[evolution 11:01:55]   candidate[4]: repair_framework, score=3.0182, parent=None
+[evolution 11:01:55] comparing retrieved hierarchy and deciding mutation
+[evolution 11:02:04] decision 1/6: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 11:02:04] knowledge 2/6: knowledge_dc9bc6d22ca8 (Replace the legacy stateless managed-component annotation with the target framework's singleton service annotation while retaining the component's service logic.)
+[evolution 11:02:04] retrieving top 5 related operators with BM25
+[evolution 11:02:04]   candidate[0]: migrate_framework, score=13.7772, parent=None
+[evolution 11:02:04]   candidate[1]: migrate_legacy_managed_component_to_application_scope, score=7.8515, parent=migrate_framework
+[evolution 11:02:04]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=5.6654, parent=migrate_framework
+[evolution 11:02:04]   candidate[3]: replace_framework_build_integration_and_packaging, score=4.1091, parent=migrate_framework
+[evolution 11:02:04]   candidate[4]: repair_framework, score=2.9335, parent=None
+[evolution 11:02:04] comparing retrieved hierarchy and deciding mutation
+[evolution 11:02:13] decision 2/6: NO_CHANGE, target=migrate_legacy_managed_component_to_application_scope, apply=False
+[evolution 11:02:13] knowledge 3/6: knowledge_32d2ebaba10c (Replace deprecated numeric rounding constants with the equivalent typed rounding-mode API while preserving the calculation and scale.)
+[evolution 11:02:13] retrieving top 5 related operators with BM25
+[evolution 11:02:13]   candidate[0]: migrate_framework, score=8.0305, parent=None
+[evolution 11:02:13]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=6.1279, parent=migrate_framework
+[evolution 11:02:13]   candidate[2]: replace_framework_build_integration_and_packaging, score=3.9963, parent=migrate_framework
+[evolution 11:02:13]   candidate[3]: repair_framework, score=2.8214, parent=None
+[evolution 11:02:13]   candidate[4]: migrate_session_scoped_component, score=0.1532, parent=migrate_framework
+[evolution 11:02:13] comparing retrieved hierarchy and deciding mutation
+[evolution 11:02:31] decision 3/6: ADD, target=replace_deprecated_numeric_rounding_constants, apply=False
+[evolution 11:02:31] knowledge 4/6: knowledge_018eeb4f9d6c (Replace a legacy servlet with a target-framework HTTP controller, map the original request methods and route, convert field injection to constructor injection, preserve response behavior, and remove the superseded servlet implementation.)
+[evolution 11:02:31] retrieving top 5 related operators with BM25
+[evolution 11:02:31]   candidate[0]: migrate_framework, score=15.5117, parent=None
+[evolution 11:02:31]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=7.8515, parent=migrate_framework
+[evolution 11:02:31]   candidate[2]: migrate_legacy_managed_component_to_application_scope, score=6.2396, parent=migrate_framework
+[evolution 11:02:31]   candidate[3]: repair_framework, score=5.6302, parent=None
+[evolution 11:02:31]   candidate[4]: replace_framework_build_integration_and_packaging, score=4.1091, parent=migrate_framework
+[evolution 11:02:31] comparing retrieved hierarchy and deciding mutation
+[evolution 11:02:56] decision 4/6: ADD, target=migrate_servlet_http_adapter_to_annotated_endpoint, apply=False
+[evolution 11:02:56] knowledge 5/6: knowledge_54924ac8479f (Add the target framework's executable application entry point at the component-scan root and remove obsolete external server bootstrap configuration.)
+[evolution 11:02:56] retrieving top 5 related operators with BM25
+[evolution 11:02:56]   candidate[0]: migrate_framework, score=17.4651, parent=None
+[evolution 11:02:56]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=12.8821, parent=migrate_framework
+[evolution 11:02:56]   candidate[2]: migrate_legacy_managed_component_to_application_scope, score=5.7496, parent=migrate_framework
+[evolution 11:02:56]   candidate[3]: repair_framework, score=4.3665, parent=None
+[evolution 11:02:56]   candidate[4]: replace_framework_build_integration_and_packaging, score=2.5610, parent=migrate_framework
+[evolution 11:02:56] comparing retrieved hierarchy and deciding mutation
+[evolution 11:03:03] decision 5/6: NO_CHANGE, target=replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 11:03:03] knowledge 6/6: knowledge_649b83c61d21 (Configure the target embedded runtime to preserve the application's externally visible HTTP port and context path.)
+[evolution 11:03:03] retrieving top 5 related operators with BM25
+[evolution 11:03:03]   candidate[0]: migrate_framework, score=13.1471, parent=None
+[evolution 11:03:03]   candidate[1]: migrate_legacy_managed_component_to_application_scope, score=6.5518, parent=migrate_framework
+[evolution 11:03:03]   candidate[2]: preserve_external_rest_routes_during_framework_migration, score=4.9400, parent=migrate_framework
+[evolution 11:03:03]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=4.3657, parent=migrate_framework
+[evolution 11:03:03]   candidate[4]: repair_framework, score=4.2545, parent=None
+[evolution 11:03:03] comparing retrieved hierarchy and deciding mutation
+[evolution 11:03:43] decision 6/6: ADD, target=preserve_external_http_port_during_framework_migration, apply=False
+[evolution 11:03:43] operator library version: 6 -> 6
+[evolution 11:03:43] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__converter__jakarta__spring/attempt-0001/adaptive__business_domain__converter__jakarta__spring/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 11:03:43] applying reviewed decision 1/6: NO_CHANGE
+[evolution 11:03:43] applying reviewed decision 2/6: NO_CHANGE
+[evolution 11:03:43] applying reviewed decision 3/6: ADD
+[evolution 11:03:43] applying reviewed decision 4/6: ADD
+[evolution 11:03:44] applying reviewed decision 5/6: NO_CHANGE
+[evolution 11:03:44] applying reviewed decision 6/6: ADD
+[evolution 11:03:44] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__converter__jakarta__spring/attempt-0001/adaptive__business_domain__converter__jakarta__spring/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-10T22:03:44.079141+00:00] evolution=SUCCESS; library v6 -> v9, active=9, experiences=8

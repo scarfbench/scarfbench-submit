@@ -1,0 +1,72 @@
+[adaptive-evolution 2026-11-10T21:52:42.270320+00:00] round 1/3, library v5, selected learned operators: ['replace_legacy_server_bootstrap_with_executable_runtime']
+[adaptive-evolution 2026-11-10T21:55:39.914020+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-10T21:55:39.916279+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 10:55:39] trace attempt-0001__adaptive__business_domain__converter__jakarta__quarkus: distilling all independent repair knowledge
+[evolution 10:56:07] genericity warning in RepairKnowledge: ['business']
+[evolution 10:56:07] distilled 6 independent knowledge item(s)
+[evolution 10:56:07] knowledge 1/6: knowledge_a06612ca5547 (Replace legacy application-server dependencies, build integration, and deployable archive packaging with target-framework dependency management, focused runtime dependencies, executable packaging, build plugin configuration, and a compatible compiler release.)
+[evolution 10:56:07] retrieving top 5 related operators with BM25
+[evolution 10:56:07]   candidate[0]: migrate_framework, score=15.7425, parent=None
+[evolution 10:56:07]   candidate[1]: replace_framework_build_integration_and_packaging, score=13.0707, parent=migrate_framework
+[evolution 10:56:07]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=11.6601, parent=migrate_framework
+[evolution 10:56:07]   candidate[3]: repair_framework, score=2.8075, parent=None
+[evolution 10:56:07]   candidate[4]: migrate_session_scoped_component, score=0.4009, parent=migrate_framework
+[evolution 10:56:07] comparing retrieved hierarchy and deciding mutation
+[evolution 10:56:17] decision 1/6: NO_CHANGE, target=replace_framework_build_integration_and_packaging,replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 10:56:17] knowledge 2/6: knowledge_579205eb3555 (Replace the source runtime's stateless component annotation with an application-scoped dependency-injection component while retaining the component's business operations.)
+[evolution 10:56:17] retrieving top 5 related operators with BM25
+[evolution 10:56:17]   candidate[0]: migrate_framework, score=13.7270, parent=None
+[evolution 10:56:17]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=7.4899, parent=migrate_framework
+[evolution 10:56:17]   candidate[2]: repair_framework, score=5.0105, parent=None
+[evolution 10:56:17]   candidate[3]: migrate_session_scoped_component, score=4.2900, parent=migrate_framework
+[evolution 10:56:17]   candidate[4]: replace_framework_build_integration_and_packaging, score=3.5899, parent=migrate_framework
+[evolution 10:56:17] comparing retrieved hierarchy and deciding mutation
+[evolution 10:56:39] genericity warning in EvolutionDecision: ['business']
+[evolution 10:57:01] decision 2/6: ADD, target=migrate_legacy_managed_component_to_application_scope, apply=False
+[evolution 10:57:01] knowledge 3/6: knowledge_64cac0486564 (Replace deprecated numeric rounding-mode constants with the corresponding enum-based rounding mode without changing scale or rounding direction.)
+[evolution 10:57:01] retrieving top 5 related operators with BM25
+[evolution 10:57:01]   candidate[0]: migrate_framework, score=7.5722, parent=None
+[evolution 10:57:01]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=5.5149, parent=migrate_framework
+[evolution 10:57:01]   candidate[2]: replace_framework_build_integration_and_packaging, score=3.5899, parent=migrate_framework
+[evolution 10:57:01]   candidate[3]: repair_framework, score=2.5864, parent=None
+[evolution 10:57:01]   candidate[4]: migrate_session_scoped_component, score=0.1718, parent=migrate_framework
+[evolution 10:57:01] comparing retrieved hierarchy and deciding mutation
+[evolution 10:57:08] decision 3/6: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 10:57:08] knowledge 4/6: knowledge_89a5bffc7cbd (Port a servlet HTTP adapter to an injectable REST resource with equivalent GET and POST parameter handling and response rendering, then remove the obsolete servlet implementation.)
+[evolution 10:57:08] retrieving top 5 related operators with BM25
+[evolution 10:57:08]   candidate[0]: migrate_framework, score=9.9685, parent=None
+[evolution 10:57:08]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=6.2787, parent=migrate_framework
+[evolution 10:57:08]   candidate[2]: repair_framework, score=3.9930, parent=None
+[evolution 10:57:08]   candidate[3]: replace_framework_build_integration_and_packaging, score=2.3622, parent=migrate_framework
+[evolution 10:57:08]   candidate[4]: preserve_external_rest_routes_during_framework_migration, score=2.3400, parent=migrate_framework
+[evolution 10:57:08] comparing retrieved hierarchy and deciding mutation
+[evolution 10:57:17] decision 4/6: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 10:57:17] knowledge 5/6: knowledge_fe7aa52a5967 (Translate legacy deployment endpoint settings into target-runtime configuration while preserving the externally visible HTTP port and application context path.)
+[evolution 10:57:17] retrieving top 5 related operators with BM25
+[evolution 10:57:17]   candidate[0]: migrate_framework, score=8.4650, parent=None
+[evolution 10:57:17]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=4.4988, parent=migrate_framework
+[evolution 10:57:17]   candidate[2]: repair_framework, score=3.7996, parent=None
+[evolution 10:57:17]   candidate[3]: replace_framework_build_integration_and_packaging, score=2.5643, parent=migrate_framework
+[evolution 10:57:17]   candidate[4]: preserve_external_rest_routes_during_framework_migration, score=2.5238, parent=migrate_framework
+[evolution 10:57:17] comparing retrieved hierarchy and deciding mutation
+[evolution 10:57:28] decision 5/6: NO_CHANGE, target=preserve_external_rest_routes_during_framework_migration, apply=False
+[evolution 10:57:28] knowledge 6/6: knowledge_d5f1ff3c50d6 (Remove obsolete application-server bootstrap and deployment configuration after replacing it with the target framework's executable runtime.)
+[evolution 10:57:28] retrieving top 5 related operators with BM25
+[evolution 10:57:28]   candidate[0]: replace_legacy_server_bootstrap_with_executable_runtime, score=12.1370, parent=migrate_framework
+[evolution 10:57:28]   candidate[1]: migrate_framework, score=11.7165, parent=None
+[evolution 10:57:28]   candidate[2]: repair_framework, score=2.7125, parent=None
+[evolution 10:57:28]   candidate[3]: replace_framework_build_integration_and_packaging, score=2.2938, parent=migrate_framework
+[evolution 10:57:28]   candidate[4]: migrate_session_scoped_component, score=0.3012, parent=migrate_framework
+[evolution 10:57:28] comparing retrieved hierarchy and deciding mutation
+[evolution 10:57:36] decision 6/6: NO_CHANGE, target=replace_legacy_server_bootstrap_with_executable_runtime, apply=False
+[evolution 10:57:36] operator library version: 5 -> 5
+[evolution 10:57:36] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__converter__jakarta__quarkus/attempt-0001/adaptive__business_domain__converter__jakarta__quarkus/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 10:57:36] applying reviewed decision 1/6: NO_CHANGE
+[evolution 10:57:36] genericity warning in RepairKnowledge: ['business']
+[evolution 10:57:36] applying reviewed decision 2/6: ADD
+[evolution 10:57:36] applying reviewed decision 3/6: DEFER
+[evolution 10:57:36] applying reviewed decision 4/6: DEFER
+[evolution 10:57:36] applying reviewed decision 5/6: NO_CHANGE
+[evolution 10:57:36] applying reviewed decision 6/6: NO_CHANGE
+[evolution 10:57:36] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__converter__jakarta__quarkus/attempt-0001/adaptive__business_domain__converter__jakarta__quarkus/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-10T21:57:36.433374+00:00] evolution=SUCCESS; library v5 -> v6, active=6, experiences=7

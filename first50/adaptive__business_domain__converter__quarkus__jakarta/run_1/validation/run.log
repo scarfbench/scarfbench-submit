@@ -1,0 +1,59 @@
+[adaptive-evolution 2026-11-10T22:03:44.705768+00:00] round 1/3, library v9, selected learned operators: ['enable_dependent_module_bean_discovery', 'replace_deprecated_numeric_rounding_constants', 'replace_framework_build_integration_and_packaging']
+[adaptive-evolution 2026-11-10T22:08:59.146070+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-10T22:08:59.148794+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 11:08:59] trace attempt-0001__adaptive__business_domain__converter__quarkus__jakarta: distilling all independent repair knowledge
+[evolution 11:09:28] distilled 5 independent knowledge item(s)
+[evolution 11:09:28] knowledge 1/5: knowledge_b2834819cade (Replace deprecated numeric rounding constants with the corresponding typed rounding-mode enum while preserving scale and calculation logic.)
+[evolution 11:09:28] retrieving top 5 related operators with BM25
+[evolution 11:09:28]   candidate[0]: migrate_framework, score=17.3175, parent=None
+[evolution 11:09:28]   candidate[1]: replace_deprecated_numeric_rounding_constants, score=15.0734, parent=migrate_framework
+[evolution 11:09:28]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=7.1763, parent=migrate_framework
+[evolution 11:09:28]   candidate[3]: migrate_legacy_managed_component_to_application_scope, score=4.9153, parent=migrate_framework
+[evolution 11:09:28]   candidate[4]: replace_framework_build_integration_and_packaging, score=4.5444, parent=migrate_framework
+[evolution 11:09:28] comparing retrieved hierarchy and deciding mutation
+[evolution 11:09:33] decision 1/5: NO_CHANGE, target=replace_deprecated_numeric_rounding_constants, apply=False
+[evolution 11:09:33] knowledge 2/5: knowledge_583d1e9ed40c (Add an annotated bean archive descriptor to the deployable web application so eligible beans are discovered and injectable by the target runtime.)
+[evolution 11:09:33] retrieving top 5 related operators with BM25
+[evolution 11:09:33]   candidate[0]: migrate_framework, score=15.2180, parent=None
+[evolution 11:09:33]   candidate[1]: migrate_servlet_http_adapter_to_annotated_endpoint, score=8.0087, parent=migrate_framework
+[evolution 11:09:33]   candidate[2]: migrate_legacy_managed_component_to_application_scope, score=5.3163, parent=migrate_framework
+[evolution 11:09:33]   candidate[3]: repair_framework, score=3.7989, parent=None
+[evolution 11:09:33]   candidate[4]: migrate_session_scoped_component, score=3.3352, parent=migrate_framework
+[evolution 11:09:33] comparing retrieved hierarchy and deciding mutation
+[evolution 11:09:41] decision 2/5: NO_CHANGE, target=enable_dependent_module_bean_discovery, apply=False
+[evolution 11:09:41] knowledge 3/5: knowledge_39e180c7a94e (Replace a framework-specific REST resource with an injectable servlet that handles the existing HTTP methods and parameters while preserving externally visible routes, form output, and conversion responses.)
+[evolution 11:09:41] retrieving top 5 related operators with BM25
+[evolution 11:09:41]   candidate[0]: migrate_framework, score=20.3975, parent=None
+[evolution 11:09:41]   candidate[1]: migrate_servlet_http_adapter_to_annotated_endpoint, score=10.6750, parent=migrate_framework
+[evolution 11:09:41]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=7.5512, parent=migrate_framework
+[evolution 11:09:41]   candidate[3]: preserve_external_rest_routes_during_framework_migration, score=5.8750, parent=migrate_framework
+[evolution 11:09:41]   candidate[4]: repair_framework, score=5.1936, parent=None
+[evolution 11:09:41] comparing retrieved hierarchy and deciding mutation
+[evolution 11:09:50] decision 3/5: DEFER, target=deferred_knowledge_pool, apply=False
+[evolution 11:09:50] knowledge 4/5: knowledge_16e22e700b75 (Replace source-framework dependency management, dependencies, plugins, profiles, and packaging with target-platform provided APIs, a compatible compiler release, deployable web-archive packaging, and target-runtime build integration.)
+[evolution 11:09:50] retrieving top 5 related operators with BM25
+[evolution 11:09:50]   candidate[0]: migrate_framework, score=19.9023, parent=None
+[evolution 11:09:50]   candidate[1]: replace_framework_build_integration_and_packaging, score=13.3671, parent=migrate_framework
+[evolution 11:09:50]   candidate[2]: replace_legacy_server_bootstrap_with_executable_runtime, score=10.0154, parent=migrate_framework
+[evolution 11:09:50]   candidate[3]: replace_deprecated_numeric_rounding_constants, score=6.9091, parent=migrate_framework
+[evolution 11:09:50]   candidate[4]: repair_framework, score=6.1256, parent=None
+[evolution 11:09:50] comparing retrieved hierarchy and deciding mutation
+[evolution 11:09:59] decision 4/5: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 11:09:59] knowledge 5/5: knowledge_90fc8a79705b (Move HTTP deployment configuration from source-framework properties to target application-server configuration, declaring the required platform features, deployed web archive, listener port, and preserved context root.)
+[evolution 11:09:59] retrieving top 5 related operators with BM25
+[evolution 11:09:59]   candidate[0]: migrate_framework, score=19.6474, parent=None
+[evolution 11:09:59]   candidate[1]: replace_legacy_server_bootstrap_with_executable_runtime, score=8.5784, parent=migrate_framework
+[evolution 11:09:59]   candidate[2]: repair_framework, score=7.7940, parent=None
+[evolution 11:09:59]   candidate[3]: migrate_servlet_http_adapter_to_annotated_endpoint, score=7.4233, parent=migrate_framework
+[evolution 11:09:59]   candidate[4]: preserve_external_http_port_during_framework_migration, score=5.3158, parent=migrate_framework
+[evolution 11:09:59] comparing retrieved hierarchy and deciding mutation
+[evolution 11:10:12] decision 5/5: NO_CHANGE, target=replace_legacy_server_bootstrap_with_executable_runtime,preserve_external_http_port_during_framework_migration, apply=False
+[evolution 11:10:12] operator library version: 9 -> 9
+[evolution 11:10:12] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__converter__quarkus__jakarta/attempt-0001/adaptive__business_domain__converter__quarkus__jakarta/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 11:10:12] applying reviewed decision 1/5: NO_CHANGE
+[evolution 11:10:12] applying reviewed decision 2/5: NO_CHANGE
+[evolution 11:10:12] applying reviewed decision 3/5: DEFER
+[evolution 11:10:12] applying reviewed decision 4/5: NO_CHANGE
+[evolution 11:10:12] applying reviewed decision 5/5: NO_CHANGE
+[evolution 11:10:12] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__converter__quarkus__jakarta/attempt-0001/adaptive__business_domain__converter__quarkus__jakarta/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-10T22:10:12.677776+00:00] evolution=SUCCESS; library v9 -> v9, active=9, experiences=9

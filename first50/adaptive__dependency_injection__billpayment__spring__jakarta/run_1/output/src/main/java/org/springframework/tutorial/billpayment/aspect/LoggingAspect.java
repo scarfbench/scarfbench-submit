@@ -1,0 +1,32 @@
+/*
+ * Copyright (c), Eclipse Foundation, Inc. and its licensors.
+ *
+ * All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Distribution License v1.0, which is available at
+ * https://www.eclipse.org/org/documents/edl-v10.php
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+package org.springframework.tutorial.billpayment.aspect;
+
+import jakarta.annotation.Priority;
+import jakarta.interceptor.AroundInvoke;
+import jakarta.interceptor.Interceptor;
+import jakarta.interceptor.InvocationContext;
+
+@Logged
+@Interceptor
+@Priority(Interceptor.Priority.APPLICATION)
+public class LoggingAspect {
+
+    @AroundInvoke
+    public Object logMethodEntry(InvocationContext context) throws Exception {
+        System.out.println("Entering method: "
+                + context.getMethod().getName() + " in class "
+                + context.getMethod().getDeclaringClass().getName());
+
+        return context.proceed();
+    }
+}

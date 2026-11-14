@@ -1,0 +1,7 @@
+FROM debian:bookworm-slim
+
+WORKDIR /application
+COPY --chmod=0755 target/application application
+
+EXPOSE 8080
+ENTRYPOINT ["./application"]

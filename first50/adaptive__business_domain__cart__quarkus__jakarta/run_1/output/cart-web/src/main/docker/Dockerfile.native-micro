@@ -1,0 +1,8 @@
+# The Jakarta EE target is JVM-based; retain this filename for existing container workflows.
+FROM icr.io/appcafe/open-liberty:kernel-slim-java17-openj9-ubi
+
+COPY --chown=1001:0 src/main/liberty/config/server.xml /config/server.xml
+RUN features.sh
+COPY --chown=1001:0 target/cart.war /config/apps/cart.war
+
+EXPOSE 8080

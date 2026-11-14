@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Bill Payment Options</title><link rel="stylesheet" th:href="@{/css/default.css}"></head>
+<body>
+<h3>Bill Payment Options</h3>
+<p>Enter an amount, select Debit Card or Credit Card, then click Pay.</p>
+<form id="paymentForm" method="post" th:action="@{/index.xhtml}">
+    <input type="hidden" name="jakarta.faces.ViewState" value="spring-billpayment-view">
+    <input type="hidden" name="paymentForm_SUBMIT" value="1">
+    <p><label for="amt">Amount: $</label><input id="amt" name="paymentForm:amt" maxlength="15" required th:value="${amount}"></p>
+    <span>Options:</span>
+    <label><input type="radio" name="paymentForm:opt" value="1" th:checked="${paymentOption == 1}"> Debit Card</label>
+    <label><input type="radio" name="paymentForm:opt" value="2" th:checked="${paymentOption == 2}"> Credit Card</label>
+    <p><button name="paymentForm:submit" value="Pay" type="submit">Pay</button></p>
+    <p><button name="paymentForm:submit" value="Reset" type="submit">Reset</button></p>
+</form>
+<div th:if="${error}" th:text="${error}" style="color:#d20005"></div>
+</body></html>

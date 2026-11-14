@@ -1,0 +1,49 @@
+[adaptive-evolution 2026-11-11T09:38:26.584561+00:00] round 1/3, library v22, selected learned operators: ['replace_embedded_runtime_bootstrap_with_managed_server_deployment']
+[adaptive-evolution 2026-11-11T09:44:32.733769+00:00] independent target build/tests: exit=0, test counts={'tests': 0, 'failures': 0, 'errors': 0, 'skipped': 0}
+[adaptive-evolution 2026-11-11T09:44:32.736210+00:00] validated trace ready; running OperatorManagerAgent distillation/retrieval/decision/application
+[evolution 22:44:32] trace attempt-0001__adaptive__business_domain__helloservice__spring__quarkus: distilling all independent repair knowledge
+[evolution 22:44:53] distilled 4 independent knowledge item(s)
+[evolution 22:44:53] knowledge 1/4: knowledge_ae886191bc65 (Replace source-framework dependency management, web-service dependencies, obsolete build-time code generation, and executable packaging integration with the target platform dependency set, web-service runtime extension, test support, and build plugin.)
+[evolution 22:44:53] retrieving top 5 related operators with BM25
+[evolution 22:44:53]   candidate[0]: migrate_framework, score=24.4521, parent=None
+[evolution 22:44:53]   candidate[1]: replace_framework_build_integration_and_packaging, score=19.7887, parent=migrate_framework
+[evolution 22:44:53]   candidate[2]: align_container_descriptors_with_migrated_artifacts, score=19.2166, parent=replace_framework_build_integration_and_packaging
+[evolution 22:44:53]   candidate[3]: replace_legacy_server_bootstrap_with_executable_runtime, score=10.7399, parent=migrate_framework
+[evolution 22:44:53]   candidate[4]: migrate_application_scoped_component_to_discoverable_service, score=9.6527, parent=migrate_framework
+[evolution 22:44:53] comparing retrieved hierarchy and deciding mutation
+[evolution 22:45:03] decision 1/4: NO_CHANGE, target=replace_framework_build_integration_and_packaging, apply=False
+[evolution 22:45:03] knowledge 2/4: knowledge_e150f3990ccb (Replace the source-framework SOAP endpoint adapter with the target runtime's standard annotated web-service endpoint while preserving the external namespace, operation, parameter, result, and response contract.)
+[evolution 22:45:03] retrieving top 5 related operators with BM25
+[evolution 22:45:03]   candidate[0]: migrate_framework, score=30.8342, parent=None
+[evolution 22:45:03]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=14.0488, parent=migrate_framework
+[evolution 22:45:03]   candidate[2]: migrate_annotated_http_adapter_preserving_contract, score=13.4666, parent=migrate_framework
+[evolution 22:45:03]   candidate[3]: migrate_servlet_http_adapter_to_annotated_endpoint, score=11.0480, parent=migrate_framework
+[evolution 22:45:03]   candidate[4]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=10.1793, parent=migrate_framework
+[evolution 22:45:03] comparing retrieved hierarchy and deciding mutation
+[evolution 22:45:12] decision 2/4: NO_CHANGE, target=migrate_annotated_soap_endpoint_to_managed_runtime, apply=False
+[evolution 22:45:12] knowledge 3/4: knowledge_79882f9c3b99 (Remove the obsolete embedded-runtime launcher and source-framework web-service configuration, then configure the target managed runtime to publish the migrated endpoint.)
+[evolution 22:45:12] retrieving top 5 related operators with BM25
+[evolution 22:45:12]   candidate[0]: migrate_framework, score=25.9243, parent=None
+[evolution 22:45:12]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=14.4331, parent=migrate_framework
+[evolution 22:45:12]   candidate[2]: replace_embedded_runtime_bootstrap_with_managed_server_deployment, score=12.1574, parent=migrate_framework
+[evolution 22:45:12]   candidate[3]: migrate_servlet_http_adapter_to_annotated_endpoint, score=9.2541, parent=migrate_framework
+[evolution 22:45:12]   candidate[4]: migrate_application_scoped_component_to_discoverable_service, score=9.2541, parent=migrate_framework
+[evolution 22:45:12] comparing retrieved hierarchy and deciding mutation
+[evolution 22:45:22] decision 3/4: NO_CHANGE, target=replace_embedded_runtime_bootstrap_with_managed_server_deployment, apply=False
+[evolution 22:45:22] knowledge 4/4: knowledge_de3009ce4272 (Add a deliberately ordered root HTTP handler that returns a successful response while allowing the target runtime's nested service routes to continue handling their own requests.)
+[evolution 22:45:22] retrieving top 5 related operators with BM25
+[evolution 22:45:22]   candidate[0]: migrate_framework, score=26.8305, parent=None
+[evolution 22:45:22]   candidate[1]: migrate_annotated_soap_endpoint_to_managed_runtime, score=11.6998, parent=migrate_framework
+[evolution 22:45:22]   candidate[2]: ensure_context_root_http_success_during_framework_migration, score=11.6113, parent=migrate_framework
+[evolution 22:45:22]   candidate[3]: migrate_application_scoped_component_to_discoverable_service, score=9.2851, parent=migrate_framework
+[evolution 22:45:22]   candidate[4]: migrate_servlet_http_adapter_to_annotated_endpoint, score=7.6207, parent=migrate_framework
+[evolution 22:45:22] comparing retrieved hierarchy and deciding mutation
+[evolution 22:45:31] decision 4/4: NO_CHANGE, target=ensure_context_root_http_success_during_framework_migration, apply=False
+[evolution 22:45:31] operator library version: 22 -> 22
+[evolution 22:45:31] evolution artifacts: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__helloservice__spring__quarkus/attempt-0001/adaptive__business_domain__helloservice__spring__quarkus/run_1/output/.scarf/adaptive/evolution/proposal-artifacts
+[evolution 22:45:31] applying reviewed decision 1/4: NO_CHANGE
+[evolution 22:45:31] applying reviewed decision 2/4: NO_CHANGE
+[evolution 22:45:31] applying reviewed decision 3/4: NO_CHANGE
+[evolution 22:45:31] applying reviewed decision 4/4: NO_CHANGE
+[evolution 22:45:31] applied evidence record: /home/mli840/migrationbench/scarfbench/batches/v0.1.2/adaptive-evolution-all/runs/business_domain__helloservice__spring__quarkus/attempt-0001/adaptive__business_domain__helloservice__spring__quarkus/run_1/output/.scarf/adaptive/evolution
+[adaptive-evolution 2026-11-11T09:45:31.336029+00:00] evolution=SUCCESS; library v22 -> v22, active=19, experiences=24
